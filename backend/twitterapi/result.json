@@ -1,0 +1,2988 @@
+{
+    "tweets": [
+        {
+            "type": "tweet",
+            "id": "1987472603351527757",
+            "url": "https://x.com/fuckdemoo/status/1987472603351527757",
+            "twitterUrl": "https://twitter.com/fuckdemoo/status/1987472603351527757",
+            "text": "@PattiSnyderLMFT @mooshyee @JohnSaw @TMobile @deutschetelekom att sucks",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 2,
+            "createdAt": "Sun Nov 09 10:49:28 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": true,
+            "inReplyToId": "1986592122431250760",
+            "conversationId": "1980412741572874644",
+            "displayTextRange": [
+                62,
+                71
+            ],
+            "inReplyToUserId": "827077510621847552",
+            "inReplyToUsername": "PattiSnyderLMFT",
+            "author": {
+                "type": "user",
+                "userName": "fuckdemoo",
+                "url": "https://x.com/fuckdemoo",
+                "twitterUrl": "https://twitter.com/fuckdemoo",
+                "id": "835544143594061824",
+                "name": "fuckdemo",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1775225408687935488/dD96QAAR_normal.jpg",
+                "coverPicture": "",
+                "description": "",
+                "location": "Chicago, IL",
+                "followers": 45,
+                "following": 45,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": false,
+                "createdAt": "Sat Feb 25 17:37:02 +0000 2017",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 23188,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 142,
+                "statusesCount": 2679,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [
+                    "1753183803328143610"
+                ],
+                "profile_bio": {
+                    "description": "professional music enjoyer",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {},
+            "card": null,
+            "place": {},
+            "entities": {
+                "user_mentions": [
+                    {
+                        "id_str": "827077510621847552",
+                        "indices": [
+                            0,
+                            16
+                        ],
+                        "name": "Patti",
+                        "screen_name": "PattiSnyderLMFT"
+                    },
+                    {
+                        "id_str": "3148864447",
+                        "indices": [
+                            17,
+                            26
+                        ],
+                        "name": "mooshyee🐳",
+                        "screen_name": "mooshyee"
+                    },
+                    {
+                        "id_str": "943584085053714432",
+                        "indices": [
+                            27,
+                            35
+                        ],
+                        "name": "John Saw",
+                        "screen_name": "JohnSaw"
+                    },
+                    {
+                        "id_str": "17338082",
+                        "indices": [
+                            36,
+                            44
+                        ],
+                        "name": "T-Mobile",
+                        "screen_name": "TMobile"
+                    },
+                    {
+                        "id_str": "92224801",
+                        "indices": [
+                            45,
+                            61
+                        ],
+                        "name": "Deutsche Telekom",
+                        "screen_name": "deutschetelekom"
+                    }
+                ]
+            },
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987468922514514153",
+            "url": "https://x.com/Haileyinthemoo1/status/1987468922514514153",
+            "twitterUrl": "https://twitter.com/Haileyinthemoo1/status/1987468922514514153",
+            "text": "Anyone still looking for NBA YoungBoy tickets at T-Mobile Arena in Las Vegas for Tonight?\n\nI've 2x seats available and I'm letting them go for less than Face Value.\n\nIf you're interested, pls shoot me a DM! Happy to provide proof and can transfer them over instantly!",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 19,
+            "createdAt": "Sun Nov 09 10:34:51 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987468922514514153",
+            "displayTextRange": [
+                0,
+                267
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "Haileyinthemoo1",
+                "url": "https://x.com/Haileyinthemoo1",
+                "twitterUrl": "https://twitter.com/Haileyinthemoo1",
+                "id": "786676633495277568",
+                "name": "Hailey❤️‍🔥",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1986167689186799616/b09rrMd-_normal.jpg",
+                "coverPicture": "https://pbs.twimg.com/profile_banners/786676633495277568/1759429189",
+                "description": "",
+                "location": "",
+                "followers": 189,
+                "following": 196,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": true,
+                "createdAt": "Thu Oct 13 21:15:00 +0000 2016",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 2063,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 6,
+                "statusesCount": 2672,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [],
+                "profile_bio": {
+                    "description": "she/her | INFP-T | leo ♌️ just a girl who loves books, food, art, music, film and tv series 💁‍♀️",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {},
+            "card": null,
+            "place": {},
+            "entities": {},
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987468727504310482",
+            "url": "https://x.com/AndroidAuth/status/1987468727504310482",
+            "twitterUrl": "https://twitter.com/AndroidAuth/status/1987468727504310482",
+            "text": "T-Mobile might still be the best postpaid carrier, but the bar is low https://t.co/oMP3bnM0nF",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 5,
+            "quoteCount": 0,
+            "viewCount": 990,
+            "createdAt": "Sun Nov 09 10:34:04 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987468727504310482",
+            "displayTextRange": [
+                0,
+                93
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "AndroidAuth",
+                "url": "https://x.com/AndroidAuth",
+                "twitterUrl": "https://twitter.com/AndroidAuth",
+                "id": "95438524",
+                "name": "Android Authority",
+                "isVerified": false,
+                "isBlueVerified": true,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1395420331922231301/lEFdJlvQ_normal.jpg",
+                "coverPicture": "https://pbs.twimg.com/profile_banners/95438524/1621529085",
+                "description": "",
+                "location": "",
+                "followers": 1188708,
+                "following": 114,
+                "status": "",
+                "canDm": false,
+                "canMediaTag": true,
+                "createdAt": "Tue Dec 08 15:13:34 +0000 2009",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 4673,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 32574,
+                "statusesCount": 103655,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [],
+                "profile_bio": {
+                    "description": "Your source for the best phones, apps, headphones, deals, and more. Send tips to tips@androidauthority.com. Some of our links may earn us affiliate commissions.",
+                    "entities": {
+                        "description": {},
+                        "url": {
+                            "urls": [
+                                {
+                                    "display_url": "androidauthority.com",
+                                    "expanded_url": "https://www.androidauthority.com",
+                                    "indices": [
+                                        0,
+                                        23
+                                    ],
+                                    "url": "https://t.co/FS61nMeIvV"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {},
+            "card": {
+                "binding_values": [
+                    {
+                        "key": "photo_image_full_size_large",
+                        "value": {
+                            "image_value": {
+                                "height": 419,
+                                "url": "https://pbs.twimg.com/card_img/1985296780607590400/fPIgd9lK?format=jpg&name=800x419",
+                                "width": 800
+                            }
+                        }
+                    },
+                    {
+                        "key": "thumbnail_image",
+                        "value": {
+                            "image_value": {
+                                "height": 150,
+                                "url": "https://pbs.twimg.com/card_img/1985296780607590400/fPIgd9lK?format=jpg&name=280x150",
+                                "width": 267
+                            }
+                        }
+                    },
+                    {
+                        "key": "description",
+                        "value": {
+                            "string_value": "T-Mobile is still arguably the best postpaid carrier, but the bar has dropped significantly over the last year or two."
+                        }
+                    },
+                    {
+                        "key": "domain",
+                        "value": {
+                            "string_value": "www.androidauthority.com"
+                        }
+                    },
+                    {
+                        "key": "thumbnail_image_large",
+                        "value": {
+                            "image_value": {
+                                "height": 320,
+                                "url": "https://pbs.twimg.com/card_img/1985296780607590400/fPIgd9lK?format=jpg&name=800x320_1",
+                                "width": 569
+                            }
+                        }
+                    },
+                    {
+                        "key": "summary_photo_image_small",
+                        "value": {
+                            "image_value": {
+                                "height": 202,
+                                "url": "https://pbs.twimg.com/card_img/1985296780607590400/fPIgd9lK?format=jpg&name=386x202",
+                                "width": 386
+                            }
+                        }
+                    },
+                    {
+                        "key": "thumbnail_image_original",
+                        "value": {
+                            "image_value": {
+                                "height": 1440,
+                                "url": "https://pbs.twimg.com/card_img/1985296780607590400/fPIgd9lK?format=jpg&name=orig",
+                                "width": 2560
+                            }
+                        }
+                    },
+                    {
+                        "key": "site",
+                        "value": {
+                            "scribe_key": "publisher_id",
+                            "user_value": {
+                                "id_str": "95438524"
+                            }
+                        }
+                    },
+                    {
+                        "key": "photo_image_full_size_small",
+                        "value": {
+                            "image_value": {
+                                "height": 202,
+                                "url": "https://pbs.twimg.com/card_img/1985296780607590400/fPIgd9lK?format=jpg&name=386x202",
+                                "width": 386
+                            }
+                        }
+                    },
+                    {
+                        "key": "summary_photo_image_large",
+                        "value": {
+                            "image_value": {
+                                "height": 419,
+                                "url": "https://pbs.twimg.com/card_img/1985296780607590400/fPIgd9lK?format=jpg&name=800x419",
+                                "width": 800
+                            }
+                        }
+                    },
+                    {
+                        "key": "thumbnail_image_small",
+                        "value": {
+                            "image_value": {
+                                "height": 81,
+                                "url": "https://pbs.twimg.com/card_img/1985296780607590400/fPIgd9lK?format=jpg&name=144x144",
+                                "width": 144
+                            }
+                        }
+                    },
+                    {
+                        "key": "creator",
+                        "value": {
+                            "user_value": {
+                                "id_str": "501090434"
+                            }
+                        }
+                    },
+                    {
+                        "key": "thumbnail_image_x_large",
+                        "value": {
+                            "image_value": {
+                                "height": 1152,
+                                "url": "https://pbs.twimg.com/card_img/1985296780607590400/fPIgd9lK?format=png&name=2048x2048_2_exp",
+                                "width": 2048
+                            }
+                        }
+                    },
+                    {
+                        "key": "photo_image_full_size_original",
+                        "value": {
+                            "image_value": {
+                                "height": 1440,
+                                "url": "https://pbs.twimg.com/card_img/1985296780607590400/fPIgd9lK?format=jpg&name=orig",
+                                "width": 2560
+                            }
+                        }
+                    },
+                    {
+                        "key": "vanity_url",
+                        "value": {
+                            "scribe_key": "vanity_url",
+                            "string_value": "androidauthority.com"
+                        }
+                    },
+                    {
+                        "key": "photo_image_full_size",
+                        "value": {
+                            "image_value": {
+                                "height": 314,
+                                "url": "https://pbs.twimg.com/card_img/1985296780607590400/fPIgd9lK?format=jpg&name=600x314",
+                                "width": 600
+                            }
+                        }
+                    },
+                    {
+                        "key": "thumbnail_image_color",
+                        "value": {
+                            "image_color_value": {
+                                "palette": [
+                                    {
+                                        "percentage": 32.67,
+                                        "rgb": {
+                                            "blue": 166,
+                                            "green": 173,
+                                            "red": 171
+                                        }
+                                    },
+                                    {
+                                        "percentage": 30.13,
+                                        "rgb": {
+                                            "blue": 110,
+                                            "green": 17,
+                                            "red": 218
+                                        }
+                                    },
+                                    {
+                                        "percentage": 22.88,
+                                        "rgb": {
+                                            "blue": 67,
+                                            "green": 75,
+                                            "red": 73
+                                        }
+                                    },
+                                    {
+                                        "percentage": 1.7,
+                                        "rgb": {
+                                            "blue": 205,
+                                            "green": 170,
+                                            "red": 226
+                                        }
+                                    },
+                                    {
+                                        "percentage": 1.37,
+                                        "rgb": {
+                                            "blue": 24,
+                                            "green": 10,
+                                            "red": 47
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "key": "title",
+                        "value": {
+                            "string_value": "T-Mobile might still be the best postpaid carrier, but the bar is low"
+                        }
+                    },
+                    {
+                        "key": "summary_photo_image_color",
+                        "value": {
+                            "image_color_value": {
+                                "palette": [
+                                    {
+                                        "percentage": 32.67,
+                                        "rgb": {
+                                            "blue": 166,
+                                            "green": 173,
+                                            "red": 171
+                                        }
+                                    },
+                                    {
+                                        "percentage": 30.13,
+                                        "rgb": {
+                                            "blue": 110,
+                                            "green": 17,
+                                            "red": 218
+                                        }
+                                    },
+                                    {
+                                        "percentage": 22.88,
+                                        "rgb": {
+                                            "blue": 67,
+                                            "green": 75,
+                                            "red": 73
+                                        }
+                                    },
+                                    {
+                                        "percentage": 1.7,
+                                        "rgb": {
+                                            "blue": 205,
+                                            "green": 170,
+                                            "red": 226
+                                        }
+                                    },
+                                    {
+                                        "percentage": 1.37,
+                                        "rgb": {
+                                            "blue": 24,
+                                            "green": 10,
+                                            "red": 47
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "key": "summary_photo_image_x_large",
+                        "value": {
+                            "image_value": {
+                                "height": 1152,
+                                "url": "https://pbs.twimg.com/card_img/1985296780607590400/fPIgd9lK?format=png&name=2048x2048_2_exp",
+                                "width": 2048
+                            }
+                        }
+                    },
+                    {
+                        "key": "summary_photo_image",
+                        "value": {
+                            "image_value": {
+                                "height": 314,
+                                "url": "https://pbs.twimg.com/card_img/1985296780607590400/fPIgd9lK?format=jpg&name=600x314",
+                                "width": 600
+                            }
+                        }
+                    },
+                    {
+                        "key": "photo_image_full_size_color",
+                        "value": {
+                            "image_color_value": {
+                                "palette": [
+                                    {
+                                        "percentage": 32.67,
+                                        "rgb": {
+                                            "blue": 166,
+                                            "green": 173,
+                                            "red": 171
+                                        }
+                                    },
+                                    {
+                                        "percentage": 30.13,
+                                        "rgb": {
+                                            "blue": 110,
+                                            "green": 17,
+                                            "red": 218
+                                        }
+                                    },
+                                    {
+                                        "percentage": 22.88,
+                                        "rgb": {
+                                            "blue": 67,
+                                            "green": 75,
+                                            "red": 73
+                                        }
+                                    },
+                                    {
+                                        "percentage": 1.7,
+                                        "rgb": {
+                                            "blue": 205,
+                                            "green": 170,
+                                            "red": 226
+                                        }
+                                    },
+                                    {
+                                        "percentage": 1.37,
+                                        "rgb": {
+                                            "blue": 24,
+                                            "green": 10,
+                                            "red": 47
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "key": "photo_image_full_size_x_large",
+                        "value": {
+                            "image_value": {
+                                "height": 1152,
+                                "url": "https://pbs.twimg.com/card_img/1985296780607590400/fPIgd9lK?format=png&name=2048x2048_2_exp",
+                                "width": 2048
+                            }
+                        }
+                    },
+                    {
+                        "key": "card_url",
+                        "value": {
+                            "scribe_key": "card_url",
+                            "string_value": "https://t.co/oMP3bnM0nF"
+                        }
+                    },
+                    {
+                        "key": "summary_photo_image_original",
+                        "value": {
+                            "image_value": {
+                                "height": 1440,
+                                "url": "https://pbs.twimg.com/card_img/1985296780607590400/fPIgd9lK?format=jpg&name=orig",
+                                "width": 2560
+                            }
+                        }
+                    }
+                ],
+                "card_platform": {
+                    "platform": {
+                        "audience": {
+                            "name": "production"
+                        },
+                        "device": {
+                            "name": "iPhone",
+                            "version": "13"
+                        }
+                    }
+                },
+                "name": "summary_large_image",
+                "url": "https://t.co/oMP3bnM0nF",
+                "user_refs_results": [
+                    {
+                        "rest_id": "501090434",
+                        "result": {
+                            "__typename": "User",
+                            "action_counts": {
+                                "favorites_count": 34
+                            },
+                            "avatar": {
+                                "image_url": "https://pbs.twimg.com/profile_images/815664030186700800/mzkj7vAp_normal.jpg"
+                            },
+                            "banner": {
+                                "image_url": "https://pbs.twimg.com/profile_banners/501090434/1483304870"
+                            },
+                            "core": {
+                                "created_at": "Thu Feb 23 19:44:46 +0000 2012",
+                                "name": "Andrew Grush",
+                                "screen_name": "iamgrushie"
+                            },
+                            "dm_permissions": {
+                                "can_dm": false
+                            },
+                            "exclusive_tweet_following": false,
+                            "identity_profile_labels_highlighted_label": {},
+                            "location": {
+                                "location": "Your closet"
+                            },
+                            "media_permissions": {
+                                "can_media_tag": true
+                            },
+                            "notifications_settings": {},
+                            "pinned_items": {},
+                            "privacy": {},
+                            "private_super_following": false,
+                            "profile_bio": {
+                                "description": "Managing Editor, Android Authority",
+                                "entities": {
+                                    "description": {},
+                                    "url": {
+                                        "urls": [
+                                            {
+                                                "display_url": "androidauthority.com",
+                                                "expanded_url": "http://www.androidauthority.com",
+                                                "indices": [
+                                                    0,
+                                                    23
+                                                ],
+                                                "url": "https://t.co/zuzeGMgjgP"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "profile_metadata": {
+                                "profile_interstitial_type": "",
+                                "profile_link_color": "800919"
+                            },
+                            "profile_translation": {
+                                "translator_type_enum": "None"
+                            },
+                            "properties": {
+                                "has_extended_profile": false
+                            },
+                            "relationship_counts": {
+                                "followers": 394,
+                                "following": 78
+                            },
+                            "relationship_perspectives": {},
+                            "rest_id": "501090434",
+                            "super_follow_eligible": false,
+                            "super_followed_by": false,
+                            "super_following": false,
+                            "tweet_counts": {
+                                "media_tweets": 12,
+                                "tweets": 72
+                            },
+                            "website": {
+                                "url": "https://t.co/zuzeGMgjgP"
+                            },
+                            "verification": {
+                                "is_blue_verified": false
+                            }
+                        }
+                    },
+                    {
+                        "rest_id": "95438524",
+                        "result": {
+                            "__typename": "User",
+                            "action_counts": {
+                                "favorites_count": 4673
+                            },
+                            "avatar": {
+                                "image_url": "https://pbs.twimg.com/profile_images/1395420331922231301/lEFdJlvQ_normal.jpg"
+                            },
+                            "banner": {
+                                "image_url": "https://pbs.twimg.com/profile_banners/95438524/1621529085"
+                            },
+                            "core": {
+                                "created_at": "Tue Dec 08 15:13:34 +0000 2009",
+                                "name": "Android Authority",
+                                "screen_name": "AndroidAuth"
+                            },
+                            "dm_permissions": {
+                                "can_dm": false
+                            },
+                            "exclusive_tweet_following": false,
+                            "identity_profile_labels_highlighted_label": {},
+                            "location": {
+                                "location": ""
+                            },
+                            "media_permissions": {
+                                "can_media_tag": true
+                            },
+                            "notifications_settings": {},
+                            "pinned_items": {},
+                            "privacy": {},
+                            "private_super_following": false,
+                            "profile_bio": {
+                                "description": "Your source for the best phones, apps, headphones, deals, and more. Send tips to tips@androidauthority.com. Some of our links may earn us affiliate commissions.",
+                                "entities": {
+                                    "description": {},
+                                    "url": {
+                                        "urls": [
+                                            {
+                                                "display_url": "androidauthority.com",
+                                                "expanded_url": "https://www.androidauthority.com",
+                                                "indices": [
+                                                    0,
+                                                    23
+                                                ],
+                                                "url": "https://t.co/FS61nMeIvV"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            "profile_metadata": {
+                                "profile_interstitial_type": "",
+                                "profile_link_color": "6FC612"
+                            },
+                            "profile_translation": {
+                                "translator_type_enum": "None"
+                            },
+                            "properties": {
+                                "has_extended_profile": true
+                            },
+                            "relationship_counts": {
+                                "followers": 1188708,
+                                "following": 114
+                            },
+                            "relationship_perspectives": {},
+                            "rest_id": "95438524",
+                            "super_follow_eligible": false,
+                            "super_followed_by": false,
+                            "super_following": false,
+                            "tweet_counts": {
+                                "media_tweets": 32574,
+                                "tweets": 103655
+                            },
+                            "website": {
+                                "url": "https://t.co/FS61nMeIvV"
+                            },
+                            "verification": {
+                                "is_blue_verified": true
+                            }
+                        }
+                    }
+                ]
+            },
+            "place": {},
+            "entities": {
+                "urls": [
+                    {
+                        "display_url": "androidauthority.com/t-mobile-low-b…",
+                        "expanded_url": "https://www.androidauthority.com/t-mobile-low-bar-postpaid-3612468/",
+                        "indices": [
+                            70,
+                            93
+                        ],
+                        "url": "https://t.co/oMP3bnM0nF"
+                    }
+                ]
+            },
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987468434041377075",
+            "url": "https://x.com/nattaly_66/status/1987468434041377075",
+            "twitterUrl": "https://twitter.com/nattaly_66/status/1987468434041377075",
+            "text": "Anyone interested in buying my 3x NBA YoungBoy tickets for tomorrow  show, \n\nNovember 9, 7:00pm ! \n\nAt 📍 T-Mobile Arena • Las Vegas, NV\n*hit me up if you want them please #NBAYoungBoytickets.🥹",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 9,
+            "createdAt": "Sun Nov 09 10:32:54 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987468434041377075",
+            "displayTextRange": [
+                0,
+                192
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "nattaly_66",
+                "url": "https://x.com/nattaly_66",
+                "twitterUrl": "https://twitter.com/nattaly_66",
+                "id": "2941015800",
+                "name": "NATTY🍿",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1975955543794561024/KcP5htQh_normal.jpg",
+                "coverPicture": "https://pbs.twimg.com/profile_banners/2941015800/1759939500",
+                "description": "",
+                "location": "#harryshouse🏠 #taylorsversion",
+                "followers": 150,
+                "following": 185,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": true,
+                "createdAt": "Tue Dec 23 17:56:59 +0000 2014",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 31,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 1,
+                "statusesCount": 2295,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [],
+                "profile_bio": {
+                    "description": "(she/her/hers)",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {},
+            "card": null,
+            "place": {},
+            "entities": {
+                "hashtags": [
+                    {
+                        "indices": [
+                            171,
+                            190
+                        ],
+                        "text": "NBAYoungBoytickets"
+                    }
+                ]
+            },
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987468190927159562",
+            "url": "https://x.com/Tretter_K/status/1987468190927159562",
+            "twitterUrl": "https://twitter.com/Tretter_K/status/1987468190927159562",
+            "text": "WTS (2x) NBA YoungBoy MASA Tour tickets, won’t be making it to the concert\n\nDate: Sun, Nov 09\n\nVenue: T-Mobile Arena - Las Vegas, Nashville \n\nPrice is negotiable feel free to hit me up if you’re interested #nbayoungboytickets #nbayoungboy",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 15,
+            "createdAt": "Sun Nov 09 10:31:56 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987468190927159562",
+            "displayTextRange": [
+                0,
+                238
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "Tretter_K",
+                "url": "https://x.com/Tretter_K",
+                "twitterUrl": "https://twitter.com/Tretter_K",
+                "id": "1538938531929890816",
+                "name": "Tretter Kaya",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1930860641264320512/Jz6g_8e9_normal.jpg",
+                "coverPicture": "https://pbs.twimg.com/profile_banners/1538938531929890816/1749188037",
+                "description": "",
+                "location": "Earth",
+                "followers": 29,
+                "following": 22,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": true,
+                "createdAt": "Mon Jun 20 17:35:22 +0000 2022",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 101,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 0,
+                "statusesCount": 100,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [],
+                "profile_bio": {
+                    "description": "☮️ ❤️",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {},
+            "card": null,
+            "place": {},
+            "entities": {
+                "hashtags": [
+                    {
+                        "indices": [
+                            206,
+                            225
+                        ],
+                        "text": "nbayoungboytickets"
+                    },
+                    {
+                        "indices": [
+                            226,
+                            238
+                        ],
+                        "text": "nbayoungboy"
+                    }
+                ]
+            },
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987468099122057727",
+            "url": "https://x.com/tran_k139/status/1987468099122057727",
+            "twitterUrl": "https://twitter.com/tran_k139/status/1987468099122057727",
+            "text": "Anyone interested in buying my NBA YoungBoy Tickets for tomorrow show!\n\n**At T-Mobile Arena • Las Vegas, NV\n \n**Sun, Nov 09, 2025. \n\nText me for more info if needed pls!!! I’m transferring via Ticketmaster",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 10,
+            "createdAt": "Sun Nov 09 10:31:34 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987468099122057727",
+            "displayTextRange": [
+                0,
+                205
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "tran_k139",
+                "url": "https://x.com/tran_k139",
+                "twitterUrl": "https://twitter.com/tran_k139",
+                "id": "1315547863930281987",
+                "name": "𝐓𝐫𝐚𝐧-𝐊 Elizabeth ♥︎",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1905363034370887680/ID0NW1YN_normal.jpg",
+                "coverPicture": "https://pbs.twimg.com/profile_banners/1315547863930281987/1743109018",
+                "description": "",
+                "location": "She/her",
+                "followers": 165,
+                "following": 20,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": true,
+                "createdAt": "Mon Oct 12 07:00:48 +0000 2020",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 4495,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 1,
+                "statusesCount": 843,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [],
+                "profile_bio": {
+                    "description": "🏠 Living rent free in my head 🏠",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {},
+            "card": null,
+            "place": {},
+            "entities": {},
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987468082961400044",
+            "url": "https://x.com/W__Ryaaan/status/1987468082961400044",
+            "twitterUrl": "https://twitter.com/W__Ryaaan/status/1987468082961400044",
+            "text": "Does anyone need (2) NBA YoungBoy tour tickets Sun, Nov 09 at T-Mobile Arena - Las Vegas, NV. Price is negotiable send a DM If you’re interested nbayoungboy",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 11,
+            "createdAt": "Sun Nov 09 10:31:31 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987468082961400044",
+            "displayTextRange": [
+                0,
+                156
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "W__Ryaaan",
+                "url": "https://x.com/W__Ryaaan",
+                "twitterUrl": "https://twitter.com/W__Ryaaan",
+                "id": "3008490726",
+                "name": "Ryan",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1934597803235287040/pmrTpoSx_normal.jpg",
+                "coverPicture": "https://pbs.twimg.com/profile_banners/3008490726/1750079046",
+                "description": "",
+                "location": "",
+                "followers": 21,
+                "following": 6,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": true,
+                "createdAt": "Tue Feb 03 00:13:05 +0000 2015",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 145,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 0,
+                "statusesCount": 144,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [],
+                "profile_bio": {
+                    "description": "Trust🤷",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {},
+            "card": null,
+            "place": {},
+            "entities": {},
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987466087085080767",
+            "url": "https://x.com/Sara_bbycannon/status/1987466087085080767",
+            "twitterUrl": "https://twitter.com/Sara_bbycannon/status/1987466087085080767",
+            "text": "got 2 nba youngBoy concert tickets on sale happening tonight @ the T-Mobile Arena., Las Vegas, NV\n  HMU for more details on them only",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 11,
+            "createdAt": "Sun Nov 09 10:23:35 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987466087085080767",
+            "displayTextRange": [
+                0,
+                133
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "Sara_bbycannon",
+                "url": "https://x.com/Sara_bbycannon",
+                "twitterUrl": "https://twitter.com/Sara_bbycannon",
+                "id": "789102234541953024",
+                "name": "sarahliz",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1916565217753862144/i8hPafOu_normal.jpg",
+                "coverPicture": "https://pbs.twimg.com/profile_banners/789102234541953024/1751747772",
+                "description": "",
+                "location": "United States",
+                "followers": 172,
+                "following": 1398,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": true,
+                "createdAt": "Thu Oct 20 13:53:28 +0000 2016",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 795,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 0,
+                "statusesCount": 700,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [],
+                "profile_bio": {
+                    "description": "Classic movies|| my love for Taylor Swift make up 95% of my personality ig Got hacked💔💔",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {},
+            "card": null,
+            "place": {},
+            "entities": {},
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987465855353979106",
+            "url": "https://x.com/wliebig13/status/1987465855353979106",
+            "twitterUrl": "https://twitter.com/wliebig13/status/1987465855353979106",
+            "text": "Anyone looking to buy NBA Youngboy concert tickets for tonight Sunday 11/9 at T-Mobile Arena, Las Vegas, NV… message me if you’re interested, my dm's open",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 19,
+            "createdAt": "Sun Nov 09 10:22:39 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987465855353979106",
+            "displayTextRange": [
+                0,
+                154
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "wliebig13",
+                "url": "https://x.com/wliebig13",
+                "twitterUrl": "https://twitter.com/wliebig13",
+                "id": "1226010157",
+                "name": "Callio🌸💫",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1770843124211802112/VrsfHNDR_normal.jpg",
+                "coverPicture": "https://pbs.twimg.com/profile_banners/1226010157/1708905035",
+                "description": "",
+                "location": "",
+                "followers": 59,
+                "following": 83,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": true,
+                "createdAt": "Wed Feb 27 20:38:32 +0000 2013",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 326,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 8,
+                "statusesCount": 614,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [],
+                "profile_bio": {
+                    "description": "",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {},
+            "card": null,
+            "place": {},
+            "entities": {},
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987465252493988087",
+            "url": "https://x.com/destbeney/status/1987465252493988087",
+            "twitterUrl": "https://twitter.com/destbeney/status/1987465252493988087",
+            "text": "3x NBA YoungBoy Tickets For Tonight At\n\nVenue: T-Mobile Arena - Las Vegas, NV\n\nDate: Sunday - October 09\n\nProof: Happy to show the Screen Record of the tickets in App \n\nPrice: Negotiable Serious buyers only \n\nDM for more info - No scammers please 🙏 \n\n#NBAYoungBoyTickets https://t.co/g6OfuBRV0Z",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 24,
+            "createdAt": "Sun Nov 09 10:20:16 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987465252493988087",
+            "displayTextRange": [
+                0,
+                270
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "destbeney",
+                "url": "https://x.com/destbeney",
+                "twitterUrl": "https://twitter.com/destbeney",
+                "id": "156825399",
+                "name": "Destiny",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1975736536470597632/RAC9AmzC_normal.jpg",
+                "coverPicture": "https://pbs.twimg.com/profile_banners/156825399/1759887284",
+                "description": "",
+                "location": "She/Her ",
+                "followers": 583,
+                "following": 171,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": false,
+                "createdAt": "Fri Jun 18 01:41:51 +0000 2010",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 1848,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 36,
+                "statusesCount": 45449,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [],
+                "profile_bio": {
+                    "description": "Everyone has their thing, concerts are my thing she/her 🌺✨⛱️",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {
+                "media": [
+                    {
+                        "display_url": "pic.twitter.com/g6OfuBRV0Z",
+                        "expanded_url": "https://twitter.com/destbeney/status/1987465252493988087/photo/1",
+                        "ext_media_availability": {
+                            "status": "Available"
+                        },
+                        "features": {
+                            "large": {
+                                "faces": [
+                                    {
+                                        "h": 526,
+                                        "w": 526,
+                                        "x": 272,
+                                        "y": 596
+                                    }
+                                ]
+                            },
+                            "orig": {
+                                "faces": [
+                                    {
+                                        "h": 526,
+                                        "w": 526,
+                                        "x": 272,
+                                        "y": 596
+                                    }
+                                ]
+                            }
+                        },
+                        "id_str": "1987465245867069440",
+                        "indices": [
+                            271,
+                            294
+                        ],
+                        "media_key": "3_1987465245867069440",
+                        "media_results": {
+                            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARuU5RxvV1AACgACG5TlHfpWEPcAAA==",
+                            "result": {
+                                "__typename": "ApiMedia",
+                                "id": "QXBpTWVkaWE6DAABCgABG5TlHG9XUAAKAAIblOUd+lYQ9wAA",
+                                "media_key": "3_1987465245867069440"
+                            }
+                        },
+                        "media_url_https": "https://pbs.twimg.com/media/G5TlHG9XUAAcrfZ.jpg",
+                        "original_info": {
+                            "focus_rects": [
+                                {
+                                    "h": 558,
+                                    "w": 996,
+                                    "x": 0,
+                                    "y": 1202
+                                },
+                                {
+                                    "h": 996,
+                                    "w": 996,
+                                    "x": 0,
+                                    "y": 983
+                                },
+                                {
+                                    "h": 1135,
+                                    "w": 996,
+                                    "x": 0,
+                                    "y": 913
+                                },
+                                {
+                                    "h": 1992,
+                                    "w": 996,
+                                    "x": 0,
+                                    "y": 56
+                                },
+                                {
+                                    "h": 2048,
+                                    "w": 996,
+                                    "x": 0,
+                                    "y": 0
+                                }
+                            ],
+                            "height": 2048,
+                            "width": 996
+                        },
+                        "sizes": {
+                            "large": {
+                                "h": 2048,
+                                "w": 996
+                            }
+                        },
+                        "type": "photo",
+                        "url": "https://t.co/g6OfuBRV0Z"
+                    },
+                    {
+                        "display_url": "pic.twitter.com/g6OfuBRV0Z",
+                        "expanded_url": "https://twitter.com/destbeney/status/1987465252493988087/photo/1",
+                        "ext_media_availability": {
+                            "status": "Available"
+                        },
+                        "features": {
+                            "large": {
+                                "faces": [
+                                    {
+                                        "h": 262,
+                                        "w": 262,
+                                        "x": 384,
+                                        "y": 568
+                                    }
+                                ]
+                            },
+                            "orig": {
+                                "faces": [
+                                    {
+                                        "h": 262,
+                                        "w": 262,
+                                        "x": 384,
+                                        "y": 568
+                                    }
+                                ]
+                            }
+                        },
+                        "id_str": "1987465245900648448",
+                        "indices": [
+                            271,
+                            294
+                        ],
+                        "media_key": "3_1987465245900648448",
+                        "media_results": {
+                            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARuU5RxxV7AACgACG5TlHfpWEPcAAA==",
+                            "result": {
+                                "__typename": "ApiMedia",
+                                "id": "QXBpTWVkaWE6DAABCgABG5TlHHFXsAAKAAIblOUd+lYQ9wAA",
+                                "media_key": "3_1987465245900648448"
+                            }
+                        },
+                        "media_url_https": "https://pbs.twimg.com/media/G5TlHHFXsAArUUb.jpg",
+                        "original_info": {
+                            "focus_rects": [
+                                {
+                                    "h": 554,
+                                    "w": 990,
+                                    "x": 0,
+                                    "y": 591
+                                },
+                                {
+                                    "h": 990,
+                                    "w": 990,
+                                    "x": 0,
+                                    "y": 373
+                                },
+                                {
+                                    "h": 1129,
+                                    "w": 990,
+                                    "x": 0,
+                                    "y": 304
+                                },
+                                {
+                                    "h": 1980,
+                                    "w": 990,
+                                    "x": 0,
+                                    "y": 0
+                                },
+                                {
+                                    "h": 2048,
+                                    "w": 990,
+                                    "x": 0,
+                                    "y": 0
+                                }
+                            ],
+                            "height": 2048,
+                            "width": 990
+                        },
+                        "sizes": {
+                            "large": {
+                                "h": 2048,
+                                "w": 990
+                            }
+                        },
+                        "type": "photo",
+                        "url": "https://t.co/g6OfuBRV0Z"
+                    }
+                ]
+            },
+            "card": null,
+            "place": {},
+            "entities": {
+                "hashtags": [
+                    {
+                        "indices": [
+                            251,
+                            270
+                        ],
+                        "text": "NBAYoungBoyTickets"
+                    }
+                ]
+            },
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987463195142029732",
+            "url": "https://x.com/fix_Grace10/status/1987463195142029732",
+            "twitterUrl": "https://twitter.com/fix_Grace10/status/1987463195142029732",
+            "text": "#WTS.. 3X NBA YoungBoy Tickets For Tonight Sun Nov 09, performance in T-Mobile Arena • Las Vegas, NV\n\nText me if you're interested please!🥲\n\nAvailable for Transfer via Ticketmaster only \n\nAm happy to show proof of my tickets 🎟️ \n#NBAYoungBoyTickets #MasaTour",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 21,
+            "createdAt": "Sun Nov 09 10:12:05 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987463195142029732",
+            "displayTextRange": [
+                0,
+                258
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "fix_Grace10",
+                "url": "https://x.com/fix_Grace10",
+                "twitterUrl": "https://twitter.com/fix_Grace10",
+                "id": "2606365610",
+                "name": "GRACIE✨♥︎",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1974930909003489280/juM47HTw_normal.jpg",
+                "coverPicture": "https://pbs.twimg.com/profile_banners/2606365610/1754409367",
+                "description": "",
+                "location": "Las Vegas, NV",
+                "followers": 161,
+                "following": 489,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": false,
+                "createdAt": "Sat Jul 05 23:53:17 +0000 2014",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 1420,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 0,
+                "statusesCount": 1456,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [],
+                "profile_bio": {
+                    "description": "Swiftie since 07'🫶🏼 | Eras Tour Miami N1🐍| Short N' Sweet 24' Oct 2nd💋| The Avett Brothers x23🪕",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {},
+            "card": null,
+            "place": {},
+            "entities": {
+                "hashtags": [
+                    {
+                        "indices": [
+                            0,
+                            4
+                        ],
+                        "text": "WTS"
+                    },
+                    {
+                        "indices": [
+                            229,
+                            248
+                        ],
+                        "text": "NBAYoungBoyTickets"
+                    },
+                    {
+                        "indices": [
+                            249,
+                            258
+                        ],
+                        "text": "MasaTour"
+                    }
+                ]
+            },
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987461673964220426",
+            "url": "https://x.com/gurl1_olivia/status/1987461673964220426",
+            "twitterUrl": "https://twitter.com/gurl1_olivia/status/1987461673964220426",
+            "text": "Yo! got (3) NBA YoungBoy Tickets for Tonight’s Show @ T-Mobile Arena, Las Vegas, NV, up for grabs!\n\nTap in if you tryna cop 1, 2, or all 3 tickets via Ticketmaster, fam!♥️🙏 https://t.co/bIWgZzueBs",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 30,
+            "createdAt": "Sun Nov 09 10:06:02 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987461673964220426",
+            "displayTextRange": [
+                0,
+                172
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "gurl1_olivia",
+                "url": "https://x.com/gurl1_olivia",
+                "twitterUrl": "https://twitter.com/gurl1_olivia",
+                "id": "776504703182106624",
+                "name": "Olivia✨",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1981702605190414336/V_PtvZid_normal.jpg",
+                "coverPicture": "https://pbs.twimg.com/profile_banners/776504703182106624/1761309706",
+                "description": "",
+                "location": "",
+                "followers": 53,
+                "following": 126,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": true,
+                "createdAt": "Thu Sep 15 19:35:22 +0000 2016",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 109,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 4,
+                "statusesCount": 442,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [],
+                "profile_bio": {
+                    "description": "29🍭",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {
+                "media": [
+                    {
+                        "allow_download_status": {
+                            "allow_download": true
+                        },
+                        "display_url": "pic.twitter.com/bIWgZzueBs",
+                        "expanded_url": "https://twitter.com/gurl1_olivia/status/1987461673964220426/photo/1",
+                        "ext_media_availability": {
+                            "status": "Available"
+                        },
+                        "features": {
+                            "large": {},
+                            "orig": {}
+                        },
+                        "id_str": "1987461641928159232",
+                        "indices": [
+                            173,
+                            196
+                        ],
+                        "media_key": "3_1987461641928159232",
+                        "media_results": {
+                            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARuU4dVT17AACgACG5Th3MlXMAoAAA==",
+                            "result": {
+                                "__typename": "ApiMedia",
+                                "id": "QXBpTWVkaWE6DAABCgABG5Th1VPXsAAKAAIblOHcyVcwCgAA",
+                                "media_key": "3_1987461641928159232"
+                            }
+                        },
+                        "media_url_https": "https://pbs.twimg.com/media/G5Th1VPXsAAwtll.jpg",
+                        "original_info": {
+                            "focus_rects": [
+                                {
+                                    "h": 558,
+                                    "w": 996,
+                                    "x": 0,
+                                    "y": 691
+                                },
+                                {
+                                    "h": 996,
+                                    "w": 996,
+                                    "x": 0,
+                                    "y": 472
+                                },
+                                {
+                                    "h": 1135,
+                                    "w": 996,
+                                    "x": 0,
+                                    "y": 403
+                                },
+                                {
+                                    "h": 1992,
+                                    "w": 996,
+                                    "x": 0,
+                                    "y": 0
+                                },
+                                {
+                                    "h": 2048,
+                                    "w": 996,
+                                    "x": 0,
+                                    "y": 0
+                                }
+                            ],
+                            "height": 2048,
+                            "width": 996
+                        },
+                        "sizes": {
+                            "large": {
+                                "h": 2048,
+                                "w": 996
+                            }
+                        },
+                        "type": "photo",
+                        "url": "https://t.co/bIWgZzueBs"
+                    },
+                    {
+                        "allow_download_status": {
+                            "allow_download": true
+                        },
+                        "display_url": "pic.twitter.com/bIWgZzueBs",
+                        "expanded_url": "https://twitter.com/gurl1_olivia/status/1987461673964220426/photo/1",
+                        "ext_media_availability": {
+                            "status": "Available"
+                        },
+                        "features": {
+                            "large": {},
+                            "orig": {}
+                        },
+                        "id_str": "1987461641898762240",
+                        "indices": [
+                            173,
+                            196
+                        ],
+                        "media_key": "3_1987461641898762240",
+                        "media_results": {
+                            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARuU4dVSFyAACgACG5Th3MlXMAoAAA==",
+                            "result": {
+                                "__typename": "ApiMedia",
+                                "id": "QXBpTWVkaWE6DAABCgABG5Th1VIXIAAKAAIblOHcyVcwCgAA",
+                                "media_key": "3_1987461641898762240"
+                            }
+                        },
+                        "media_url_https": "https://pbs.twimg.com/media/G5Th1VIXIAAKvlc.jpg",
+                        "original_info": {
+                            "focus_rects": [
+                                {
+                                    "h": 559,
+                                    "w": 998,
+                                    "x": 0,
+                                    "y": 1030
+                                },
+                                {
+                                    "h": 998,
+                                    "w": 998,
+                                    "x": 0,
+                                    "y": 591
+                                },
+                                {
+                                    "h": 1138,
+                                    "w": 998,
+                                    "x": 0,
+                                    "y": 451
+                                },
+                                {
+                                    "h": 1589,
+                                    "w": 795,
+                                    "x": 119,
+                                    "y": 0
+                                },
+                                {
+                                    "h": 1589,
+                                    "w": 998,
+                                    "x": 0,
+                                    "y": 0
+                                }
+                            ],
+                            "height": 1589,
+                            "width": 998
+                        },
+                        "sizes": {
+                            "large": {
+                                "h": 1589,
+                                "w": 998
+                            }
+                        },
+                        "type": "photo",
+                        "url": "https://t.co/bIWgZzueBs"
+                    }
+                ]
+            },
+            "card": null,
+            "place": {},
+            "entities": {},
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987457844741013534",
+            "url": "https://x.com/shuffled_seo/status/1987457844741013534",
+            "twitterUrl": "https://twitter.com/shuffled_seo/status/1987457844741013534",
+            "text": "Hi, I’ve got for sale my 3 tickets to NBA YoungBoy’s Show in Las Vegas tomorrow \n\nVenue/ T-Mobile Arena in Las Vegas, NV\n\nTime/ 7:30pm\n\nSection/  4, Row DD\n\nAsking $130 per ticket\n\nHMU for more details if you’re interested",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 22,
+            "createdAt": "Sun Nov 09 09:50:50 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987457844741013534",
+            "displayTextRange": [
+                0,
+                222
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "shuffled_seo",
+                "url": "https://x.com/shuffled_seo",
+                "twitterUrl": "https://twitter.com/shuffled_seo",
+                "id": "202120993",
+                "name": "David Howard",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1328122576/shuffled-fblogo_normal.jpg",
+                "coverPicture": "",
+                "description": "",
+                "location": "",
+                "followers": 223,
+                "following": 370,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": true,
+                "createdAt": "Wed Oct 13 10:32:37 +0000 2010",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 2,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 191,
+                "statusesCount": 1726,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [],
+                "profile_bio": {
+                    "description": "",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {},
+            "card": null,
+            "place": {},
+            "entities": {},
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987457708144967830",
+            "url": "https://x.com/Baby_Joana9/status/1987457708144967830",
+            "twitterUrl": "https://twitter.com/Baby_Joana9/status/1987457708144967830",
+            "text": "Anyone interested in 2 NBA Youngboy tickets for Nov 9 at T-Mobile Arena, Las Vegas? My boyfriend got sick so we can't attend anymore. Send a dm if you're interested",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 24,
+            "createdAt": "Sun Nov 09 09:50:17 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987457708144967830",
+            "displayTextRange": [
+                0,
+                164
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "Baby_Joana9",
+                "url": "https://x.com/Baby_Joana9",
+                "twitterUrl": "https://twitter.com/Baby_Joana9",
+                "id": "704120768301555712",
+                "name": "JOANA🧜🏻‍♀️😍",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1971590791568015360/T0JTYiAx_normal.jpg",
+                "coverPicture": "https://pbs.twimg.com/profile_banners/704120768301555712/1758898871",
+                "description": "",
+                "location": "Heart",
+                "followers": 119,
+                "following": 860,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": true,
+                "createdAt": "Mon Feb 29 01:47:27 +0000 2016",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 513,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 1,
+                "statusesCount": 810,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [
+                    "1977288514518618503"
+                ],
+                "profile_bio": {
+                    "description": "GOD First ❤️",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {},
+            "card": null,
+            "place": {},
+            "entities": {},
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987456644914225488",
+            "url": "https://x.com/SHillui78192/status/1987456644914225488",
+            "twitterUrl": "https://twitter.com/SHillui78192/status/1987456644914225488",
+            "text": "@TMobile Zero down and a free phone sounds like a fantastic, stress-free deal.",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 2,
+            "createdAt": "Sun Nov 09 09:46:03 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": true,
+            "inReplyToId": "1973863668959096848",
+            "conversationId": "1973863668959096848",
+            "displayTextRange": [
+                9,
+                78
+            ],
+            "inReplyToUserId": "17338082",
+            "inReplyToUsername": "TMobile",
+            "author": {
+                "type": "user",
+                "userName": "SHillui78192",
+                "url": "https://x.com/SHillui78192",
+                "twitterUrl": "https://twitter.com/SHillui78192",
+                "id": "1945195567967297537",
+                "name": "Susan Hillui",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1945195630378340352/8cHLu8M8_normal.jpg",
+                "coverPicture": "",
+                "description": "",
+                "location": "",
+                "followers": 95,
+                "following": 152,
+                "status": "",
+                "canDm": false,
+                "canMediaTag": true,
+                "createdAt": "Tue Jul 15 18:55:46 +0000 2025",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 134,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 63,
+                "statusesCount": 181,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [],
+                "profile_bio": {
+                    "description": "",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {},
+            "card": null,
+            "place": {},
+            "entities": {
+                "user_mentions": [
+                    {
+                        "id_str": "17338082",
+                        "indices": [
+                            0,
+                            8
+                        ],
+                        "name": "T-Mobile",
+                        "screen_name": "TMobile"
+                    }
+                ]
+            },
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987451936941965313",
+            "url": "https://x.com/ElizabethMore01/status/1987451936941965313",
+            "twitterUrl": "https://twitter.com/ElizabethMore01/status/1987451936941965313",
+            "text": "Who is interested in 3x NBA YoungBoy tickets for Sun, Nov 9 at T-Mobile Arena • Las Vegas. We can’t attend anymore",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 21,
+            "createdAt": "Sun Nov 09 09:27:21 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987451936941965313",
+            "displayTextRange": [
+                0,
+                114
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "ElizabethMore01",
+                "url": "https://x.com/ElizabethMore01",
+                "twitterUrl": "https://twitter.com/ElizabethMore01",
+                "id": "1917955341234634753",
+                "name": "Moore 🥰",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1966409023206428672/IuxCvXqa_normal.jpg",
+                "coverPicture": "https://pbs.twimg.com/profile_banners/1917955341234634753/1757663431",
+                "description": "",
+                "location": "",
+                "followers": 62,
+                "following": 30,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": true,
+                "createdAt": "Thu May 01 14:52:58 +0000 2025",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 209,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 1,
+                "statusesCount": 123,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [
+                    "1934964107540656504"
+                ],
+                "profile_bio": {
+                    "description": "",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {},
+            "card": null,
+            "place": {},
+            "entities": {},
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987447875731898391",
+            "url": "https://x.com/UpperEchelons0/status/1987447875731898391",
+            "twitterUrl": "https://twitter.com/UpperEchelons0/status/1987447875731898391",
+            "text": "T-Mobile carrier proxy is in bulk now. A client just got his now for a cheaper price. Get your T-Mobile carrier proxy today and access those regions restricted platforms.\n\nhttps://t.co/B5RxfXD1Hd https://t.co/DG4NZjaqdH",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 7,
+            "createdAt": "Sun Nov 09 09:11:13 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987447875731898391",
+            "displayTextRange": [
+                0,
+                195
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "UpperEchelons0",
+                "url": "https://x.com/UpperEchelons0",
+                "twitterUrl": "https://twitter.com/UpperEchelons0",
+                "id": "1940067721137594368",
+                "name": "ChaseBitcoins + Tutorials",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1985937204061827072/4aiZ3-U-_normal.jpg",
+                "coverPicture": "https://pbs.twimg.com/profile_banners/1940067721137594368/1761612144",
+                "description": "",
+                "location": "",
+                "followers": 276,
+                "following": 469,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": false,
+                "createdAt": "Tue Jul 01 15:19:38 +0000 2025",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 2174,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 736,
+                "statusesCount": 1043,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [
+                    "1978449659417809382"
+                ],
+                "profile_bio": {
+                    "description": "learn celeb today and never be broke again .. Dm to learn good updates https://t.co/iCeXzB4hvZ",
+                    "entities": {
+                        "description": {
+                            "urls": [
+                                {
+                                    "display_url": "wa.me/2347076428875",
+                                    "expanded_url": "http://wa.me/2347076428875",
+                                    "indices": [
+                                        71,
+                                        94
+                                    ],
+                                    "url": "https://t.co/iCeXzB4hvZ"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "urls": [
+                                {
+                                    "display_url": "whatsapp.com/channel/0029Vb…",
+                                    "expanded_url": "https://whatsapp.com/channel/0029VbBewcz65yD3tZpIho1G",
+                                    "indices": [
+                                        0,
+                                        23
+                                    ],
+                                    "url": "https://t.co/YdDk6stBXo"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {
+                "media": [
+                    {
+                        "allow_download_status": {
+                            "allow_download": true
+                        },
+                        "display_url": "pic.twitter.com/DG4NZjaqdH",
+                        "expanded_url": "https://twitter.com/UpperEchelons0/status/1987447875731898391/photo/1",
+                        "ext_media_availability": {
+                            "status": "Available"
+                        },
+                        "features": {
+                            "large": {
+                                "faces": [
+                                    {
+                                        "h": 36,
+                                        "w": 36,
+                                        "x": 33,
+                                        "y": 645
+                                    },
+                                    {
+                                        "h": 45,
+                                        "w": 45,
+                                        "x": 331,
+                                        "y": 731
+                                    }
+                                ]
+                            },
+                            "orig": {
+                                "faces": [
+                                    {
+                                        "h": 36,
+                                        "w": 36,
+                                        "x": 33,
+                                        "y": 645
+                                    },
+                                    {
+                                        "h": 45,
+                                        "w": 45,
+                                        "x": 331,
+                                        "y": 731
+                                    }
+                                ]
+                            }
+                        },
+                        "id_str": "1987447866625781760",
+                        "indices": [
+                            196,
+                            219
+                        ],
+                        "media_key": "3_1987447866625781760",
+                        "media_results": {
+                            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARuU1U4D1nAACgACG5TVUCKawBcAAA==",
+                            "result": {
+                                "__typename": "ApiMedia",
+                                "id": "QXBpTWVkaWE6DAABCgABG5TVTgPWcAAKAAIblNVQIprAFwAA",
+                                "media_key": "3_1987447866625781760"
+                            }
+                        },
+                        "media_url_https": "https://pbs.twimg.com/media/G5TVTgPWcAANuGM.jpg",
+                        "original_info": {
+                            "focus_rects": [
+                                {
+                                    "h": 403,
+                                    "w": 719,
+                                    "x": 0,
+                                    "y": 191
+                                },
+                                {
+                                    "h": 719,
+                                    "w": 719,
+                                    "x": 0,
+                                    "y": 33
+                                },
+                                {
+                                    "h": 820,
+                                    "w": 719,
+                                    "x": 0,
+                                    "y": 0
+                                },
+                                {
+                                    "h": 1048,
+                                    "w": 524,
+                                    "x": 0,
+                                    "y": 0
+                                },
+                                {
+                                    "h": 1048,
+                                    "w": 719,
+                                    "x": 0,
+                                    "y": 0
+                                }
+                            ],
+                            "height": 1048,
+                            "width": 719
+                        },
+                        "sizes": {
+                            "large": {
+                                "h": 1048,
+                                "w": 719
+                            }
+                        },
+                        "type": "photo",
+                        "url": "https://t.co/DG4NZjaqdH"
+                    },
+                    {
+                        "allow_download_status": {
+                            "allow_download": true
+                        },
+                        "display_url": "pic.twitter.com/DG4NZjaqdH",
+                        "expanded_url": "https://twitter.com/UpperEchelons0/status/1987447875731898391/photo/1",
+                        "ext_media_availability": {
+                            "status": "Available"
+                        },
+                        "features": {
+                            "large": {},
+                            "orig": {}
+                        },
+                        "id_str": "1987447866667737088",
+                        "indices": [
+                            196,
+                            219
+                        ],
+                        "media_key": "3_1987447866667737088",
+                        "media_results": {
+                            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARuU1U4GVqAACgACG5TVUCKawBcAAA==",
+                            "result": {
+                                "__typename": "ApiMedia",
+                                "id": "QXBpTWVkaWE6DAABCgABG5TVTgZWoAAKAAIblNVQIprAFwAA",
+                                "media_key": "3_1987447866667737088"
+                            }
+                        },
+                        "media_url_https": "https://pbs.twimg.com/media/G5TVTgZWoAAmheX.jpg",
+                        "original_info": {
+                            "focus_rects": [
+                                {
+                                    "h": 403,
+                                    "w": 720,
+                                    "x": 0,
+                                    "y": 154
+                                },
+                                {
+                                    "h": 720,
+                                    "w": 720,
+                                    "x": 0,
+                                    "y": 0
+                                },
+                                {
+                                    "h": 821,
+                                    "w": 720,
+                                    "x": 0,
+                                    "y": 0
+                                },
+                                {
+                                    "h": 950,
+                                    "w": 475,
+                                    "x": 123,
+                                    "y": 0
+                                },
+                                {
+                                    "h": 950,
+                                    "w": 720,
+                                    "x": 0,
+                                    "y": 0
+                                }
+                            ],
+                            "height": 950,
+                            "width": 720
+                        },
+                        "sizes": {
+                            "large": {
+                                "h": 950,
+                                "w": 720
+                            }
+                        },
+                        "type": "photo",
+                        "url": "https://t.co/DG4NZjaqdH"
+                    }
+                ]
+            },
+            "card": null,
+            "place": {},
+            "entities": {
+                "urls": [
+                    {
+                        "display_url": "wa.me/2347076428875",
+                        "expanded_url": "http://wa.me/2347076428875",
+                        "indices": [
+                            172,
+                            195
+                        ],
+                        "url": "https://t.co/B5RxfXD1Hd"
+                    }
+                ]
+            },
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987446100123349250",
+            "url": "https://x.com/MissBezer/status/1987446100123349250",
+            "twitterUrl": "https://twitter.com/MissBezer/status/1987446100123349250",
+            "text": "I wanna let go of my Three tickets for NBA YoungBoy Tour concert.\n\n@ The T-Mobile Arena - Las Vegas, NV\nTime: 7;00pm Sunday November 09\n\nDm me if you’re interested 🫶❤️\nAsking for $100 each per ticket 🎫 https://t.co/baUAeMJHsD",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 50,
+            "createdAt": "Sun Nov 09 09:04:09 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987446100123349250",
+            "displayTextRange": [
+                0,
+                201
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "MissBezer",
+                "url": "https://x.com/MissBezer",
+                "twitterUrl": "https://twitter.com/MissBezer",
+                "id": "1084584735706361856",
+                "name": "Miss Bezer👩🏼‍🏫🤍",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1527700437075378180/h6Azw7V6_normal.jpg",
+                "coverPicture": "https://pbs.twimg.com/profile_banners/1084584735706361856/1653067178",
+                "description": "",
+                "location": "United States",
+                "followers": 225,
+                "following": 216,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": true,
+                "createdAt": "Sun Jan 13 22:55:26 +0000 2019",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 435,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 15,
+                "statusesCount": 680,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [],
+                "profile_bio": {
+                    "description": "ECT September 2022 - Year 6👩🏼‍🏫",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {
+                "media": [
+                    {
+                        "allow_download_status": {
+                            "allow_download": true
+                        },
+                        "display_url": "pic.twitter.com/baUAeMJHsD",
+                        "expanded_url": "https://twitter.com/MissBezer/status/1987446100123349250/photo/1",
+                        "ext_media_availability": {
+                            "status": "Available"
+                        },
+                        "features": {
+                            "large": {
+                                "faces": [
+                                    {
+                                        "h": 214,
+                                        "w": 214,
+                                        "x": 418,
+                                        "y": 364
+                                    }
+                                ]
+                            },
+                            "orig": {
+                                "faces": [
+                                    {
+                                        "h": 214,
+                                        "w": 214,
+                                        "x": 418,
+                                        "y": 364
+                                    }
+                                ]
+                            }
+                        },
+                        "id_str": "1987446092930097152",
+                        "indices": [
+                            202,
+                            225
+                        ],
+                        "media_key": "3_1987446092930097152",
+                        "media_results": {
+                            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARuU07ELViAACgACG5TTsrgWcQIAAA==",
+                            "result": {
+                                "__typename": "ApiMedia",
+                                "id": "QXBpTWVkaWE6DAABCgABG5TTsQtWIAAKAAIblNOyuBZxAgAA",
+                                "media_key": "3_1987446092930097152"
+                            }
+                        },
+                        "media_url_https": "https://pbs.twimg.com/media/G5TTsQtWIAAMM1Y.jpg",
+                        "original_info": {
+                            "focus_rects": [
+                                {
+                                    "h": 571,
+                                    "w": 1020,
+                                    "x": 0,
+                                    "y": 278
+                                },
+                                {
+                                    "h": 1020,
+                                    "w": 1020,
+                                    "x": 0,
+                                    "y": 53
+                                },
+                                {
+                                    "h": 1163,
+                                    "w": 1020,
+                                    "x": 0,
+                                    "y": 0
+                                },
+                                {
+                                    "h": 2040,
+                                    "w": 1020,
+                                    "x": 0,
+                                    "y": 0
+                                },
+                                {
+                                    "h": 2048,
+                                    "w": 1020,
+                                    "x": 0,
+                                    "y": 0
+                                }
+                            ],
+                            "height": 2048,
+                            "width": 1020
+                        },
+                        "sizes": {
+                            "large": {
+                                "h": 2048,
+                                "w": 1020
+                            }
+                        },
+                        "type": "photo",
+                        "url": "https://t.co/baUAeMJHsD"
+                    },
+                    {
+                        "allow_download_status": {
+                            "allow_download": true
+                        },
+                        "display_url": "pic.twitter.com/baUAeMJHsD",
+                        "expanded_url": "https://twitter.com/MissBezer/status/1987446100123349250/photo/1",
+                        "ext_media_availability": {
+                            "status": "Available"
+                        },
+                        "features": {
+                            "large": {},
+                            "orig": {}
+                        },
+                        "id_str": "1987446092980441088",
+                        "indices": [
+                            202,
+                            225
+                        ],
+                        "media_key": "3_1987446092980441088",
+                        "media_results": {
+                            "id": "QXBpTWVkaWFSZXN1bHRzOgwAAQoAARuU07EOVlAACgACG5TTsrgWcQIAAA==",
+                            "result": {
+                                "__typename": "ApiMedia",
+                                "id": "QXBpTWVkaWE6DAABCgABG5TTsQ5WUAAKAAIblNOyuBZxAgAA",
+                                "media_key": "3_1987446092980441088"
+                            }
+                        },
+                        "media_url_https": "https://pbs.twimg.com/media/G5TTsQ5WUAAxuyr.jpg",
+                        "original_info": {
+                            "focus_rects": [
+                                {
+                                    "h": 575,
+                                    "w": 1026,
+                                    "x": 0,
+                                    "y": 890
+                                },
+                                {
+                                    "h": 1026,
+                                    "w": 1026,
+                                    "x": 0,
+                                    "y": 664
+                                },
+                                {
+                                    "h": 1170,
+                                    "w": 1026,
+                                    "x": 0,
+                                    "y": 592
+                                },
+                                {
+                                    "h": 2048,
+                                    "w": 1024,
+                                    "x": 0,
+                                    "y": 0
+                                },
+                                {
+                                    "h": 2048,
+                                    "w": 1026,
+                                    "x": 0,
+                                    "y": 0
+                                }
+                            ],
+                            "height": 2048,
+                            "width": 1026
+                        },
+                        "sizes": {
+                            "large": {
+                                "h": 2048,
+                                "w": 1026
+                            }
+                        },
+                        "type": "photo",
+                        "url": "https://t.co/baUAeMJHsD"
+                    }
+                ]
+            },
+            "card": null,
+            "place": {},
+            "entities": {},
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987445085295038532",
+            "url": "https://x.com/Mayra_Mag10/status/1987445085295038532",
+            "twitterUrl": "https://twitter.com/Mayra_Mag10/status/1987445085295038532",
+            "text": "#WTS My (3) NBA YoungBoy Tickets  For Tonight Sun , Nov 9 show Performance in T-Mobile Arena. Las Vegas, NV \n\nTime: 7:00pm\n\nPlease kindly message me if you’re interested it’s urgent ‼️ 😭\n\nI’m also transferring them via Ticketmaster!#NBAYoungBoyTickets",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 32,
+            "createdAt": "Sun Nov 09 09:00:07 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987445085295038532",
+            "displayTextRange": [
+                0,
+                251
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "Mayra_Mag10",
+                "url": "https://x.com/Mayra_Mag10",
+                "twitterUrl": "https://twitter.com/Mayra_Mag10",
+                "id": "158570976",
+                "name": "MAYRA • MAG 🌸🌹",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1925426468659580928/qxNhb_-O_normal.jpg",
+                "coverPicture": "https://pbs.twimg.com/profile_banners/158570976/1747893344",
+                "description": "",
+                "location": "Las Vegas, NV",
+                "followers": 156,
+                "following": 36,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": true,
+                "createdAt": "Wed Jun 23 01:52:59 +0000 2010",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 676,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 1,
+                "statusesCount": 2229,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [],
+                "profile_bio": {
+                    "description": "wake me up when Katy & Rih have collaborated in the studio that is) / fan acct",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {},
+            "card": null,
+            "place": {},
+            "entities": {
+                "hashtags": [
+                    {
+                        "indices": [
+                            0,
+                            4
+                        ],
+                        "text": "WTS"
+                    },
+                    {
+                        "indices": [
+                            232,
+                            251
+                        ],
+                        "text": "NBAYoungBoyTickets"
+                    }
+                ]
+            },
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        },
+        {
+            "type": "tweet",
+            "id": "1987444949986451789",
+            "url": "https://x.com/BriannaP1228/status/1987444949986451789",
+            "twitterUrl": "https://twitter.com/BriannaP1228/status/1987444949986451789",
+            "text": "I’ve got 3X NBA YoungBoy Tickets For Tonight Sun, Nov 9  performance\nLocation: T-Mobile Arena. Las Vegas, NV\nTime: 7:00PM\n\n(Text me if anyone is interested) \n\nWill show proof and it's very urgent!!#NBAYoungBoyTickets",
+            "source": "Twitter for iPhone",
+            "retweetCount": 0,
+            "replyCount": 0,
+            "likeCount": 0,
+            "quoteCount": 0,
+            "viewCount": 33,
+            "createdAt": "Sun Nov 09 08:59:35 +0000 2025",
+            "lang": "en",
+            "bookmarkCount": 0,
+            "isReply": false,
+            "inReplyToId": null,
+            "conversationId": "1987444949986451789",
+            "displayTextRange": [
+                0,
+                216
+            ],
+            "inReplyToUserId": null,
+            "inReplyToUsername": null,
+            "author": {
+                "type": "user",
+                "userName": "BriannaP1228",
+                "url": "https://x.com/BriannaP1228",
+                "twitterUrl": "https://twitter.com/BriannaP1228",
+                "id": "2181638961",
+                "name": "Brian ᵀˢ💌 ༺❀༻",
+                "isVerified": false,
+                "isBlueVerified": false,
+                "verifiedType": null,
+                "profilePicture": "https://pbs.twimg.com/profile_images/1976753744843788288/TmSOMOKt_normal.jpg",
+                "coverPicture": "https://pbs.twimg.com/profile_banners/2181638961/1760130720",
+                "description": "",
+                "location": "Harry’s House🏠",
+                "followers": 283,
+                "following": 192,
+                "status": "",
+                "canDm": true,
+                "canMediaTag": true,
+                "createdAt": "Fri Nov 15 07:16:12 +0000 2013",
+                "entities": {
+                    "description": {
+                        "urls": []
+                    },
+                    "url": {}
+                },
+                "fastFollowersCount": 0,
+                "favouritesCount": 3768,
+                "hasCustomTimelines": true,
+                "isTranslator": false,
+                "mediaCount": 12,
+                "statusesCount": 4553,
+                "withheldInCountries": [],
+                "affiliatesHighlightedLabel": {},
+                "possiblySensitive": false,
+                "pinnedTweetIds": [],
+                "profile_bio": {
+                    "description": "she/her directioner | harrie | louis tomlinson | i promise to always be here for harry styles🩷♡︎",
+                    "entities": {
+                        "description": {}
+                    }
+                },
+                "isAutomated": false,
+                "automatedBy": null
+            },
+            "extendedEntities": {},
+            "card": null,
+            "place": {},
+            "entities": {
+                "hashtags": [
+                    {
+                        "indices": [
+                            197,
+                            216
+                        ],
+                        "text": "NBAYoungBoyTickets"
+                    }
+                ]
+            },
+            "quoted_tweet": null,
+            "retweeted_tweet": null,
+            "isLimitedReply": false,
+            "article": null
+        }
+    ],
+    "has_next_page": true,
+    "next_cursor": "DAADDAABCgABG5TrzXuWsU0KAAIblNKm7pYhTQAIAAIAAAACCAADAAAAAAgABAAAAAAKAAUblOzNcgAnEAoABhuU7M1x_9jwAAA"
+}
