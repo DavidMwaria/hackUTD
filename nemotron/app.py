@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 """
 hybrid_forecast_gemini_v6_nemotron_debug.py
 - Loads customer_happiness.csv
@@ -6,6 +7,7 @@ hybrid_forecast_gemini_v6_nemotron_debug.py
 - Calls Nemotron for reasoning/explanation with FULL debugging
 - Falls back to local linear forecast if Gemini fails
 - Plots numeric forecast
+- Provides Flask API with CORS for frontend integration
 """
 
 import os, re, json
@@ -15,19 +17,52 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import requests
 import time
+from threading import Thread
+
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# -----------------------
+# Flask App Setup
+# -----------------------
+
+app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
+
+# Global variables to store latest results
+latest_results = {
+    "reasoning": None,
+    "forecast": None,
+    "historical_data": None,
+    "status": "idle",
+    "error": None,
+    "timestamp": None
+}
 
 # -----------------------
 # Load CSV
 # -----------------------
-def load_data(path="customer_happiness.csv"):
-    df = pd.read_csv(path, parse_dates=["month"])
+
+def load_data(filename="customer_happiness.csv"):
+    # Get folder where this script lives
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    full_path = os.path.join(base_dir, filename)
+    
+    df = pd.read_csv(full_path, parse_dates=["month"])
+    
     if df["month"].dtype == "object":
         df["month"] = pd.to_datetime(df["month"], format="%Y-%m")
+    
     return df.sort_values("month").reset_index(drop=True)
 
 # -----------------------
 # Gemini prompt (always return numeric)
 # -----------------------
+
 def make_prompt_gemini(df, months=6, forecast_months=3):
     subset = df.tail(months)
     rows = "\n".join([f"{row.month.strftime('%Y-%m')}: {row.happiness_index}" for _, row in subset.iterrows()])
@@ -59,6 +94,7 @@ Example format:
 # -----------------------
 # Nemotron prompt
 # -----------------------
+
 def make_prompt_nemotron(df, months=6):
     subset = df.tail(months)
     rows = "\n".join([f"{row.month.strftime('%Y-%m')}: {row.happiness_index}" for _, row in subset.iterrows()])
@@ -78,10 +114,11 @@ Be specific and thorough in your analysis."""
 # -----------------------
 # Nemotron API call
 # -----------------------
+
 def call_nemotron(prompt, max_retries=3):
     api_key = os.getenv("OPENROUTER_API_KEY")
     if not api_key:
-        print("❌ OPENROUTER_API_KEY not set")
+        print("OPENROUTER_API_KEY not set")
         return "Nemotron reasoning unavailable: No API key found."
 
     # List of Nemotron models to try
@@ -130,10 +167,10 @@ def call_nemotron(prompt, max_retries=3):
                 elif resp.status_code == 404:
                     break  # Try next model
                 elif resp.status_code == 402:
-                    print("❌ OpenRouter credits exhausted")
+                    print("OpenRouter credits exhausted")
                     return "Nemotron reasoning unavailable: No credits"
                 elif resp.status_code == 401:
-                    print("❌ Invalid API key")
+                    print("Invalid API key")
                     return "Nemotron reasoning unavailable: Invalid API key"
                 elif resp.status_code != 200:
                     if attempt < max_retries - 1:
@@ -145,14 +182,14 @@ def call_nemotron(prompt, max_retries=3):
                 data = resp.json()
                 
                 if "error" in data:
-                    print(f"❌ API Error: {data['error'].get('message', 'Unknown error')}")
+                    print(f"API Error: {data['error'].get('message', 'Unknown error')}")
                     break
                 
                 # Extract content
                 if "choices" in data and len(data["choices"]) > 0:
                     content = data["choices"][0]["message"].get("content", "")
                     if content and content.strip():
-                        print(f"✅ Nemotron analysis received ({len(content)} chars)")
+                        print(f"Nemotron analysis received ({len(content)} chars)")
                         return content
                 
                 # Empty response, retry
@@ -167,17 +204,18 @@ def call_nemotron(prompt, max_retries=3):
                     time.sleep(5)
                     continue
             except Exception as e:
-                print(f"❌ Error: {type(e).__name__}: {e}")
+                print(f"Error: {type(e).__name__}: {e}")
                 if attempt < max_retries - 1:
                     continue
     
     # All models failed
-    print("❌ All Nemotron models failed")
+    print("All Nemotron models failed")
     return "Nemotron reasoning unavailable: All models and retries exhausted."
 
 # -----------------------
 # Gemini API call
 # -----------------------
+
 def call_gemini(prompt):
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
@@ -221,16 +259,17 @@ def call_gemini(prompt):
         if not output_text.strip():
             raise ValueError("Gemini returned empty text content")
         
-        print(f"✅ Gemini forecast received")
+        print(f"Gemini forecast received")
         return output_text
         
     except Exception as e:
-        print(f"❌ Gemini error: {e}")
+        print(f"Gemini error: {e}")
         raise
 
 # -----------------------
 # Parse Gemini free-text forecast
 # -----------------------
+
 def parse_forecast(text):
     forecast = {}
     patterns = [
@@ -255,6 +294,7 @@ def parse_forecast(text):
 # -----------------------
 # Local fallback
 # -----------------------
+
 def simple_local_forecast(df, months_ahead=3):
     y = df["happiness_index"].astype(float).values
     last_month = df["month"].iloc[-1]
@@ -268,6 +308,7 @@ def simple_local_forecast(df, months_ahead=3):
 # -----------------------
 # Plotting
 # -----------------------
+
 def plot_forecast(df, forecast):
     plt.figure(figsize=(12,6))
     
@@ -313,58 +354,157 @@ def plot_forecast(df, forecast):
     plt.show()
 
 # -----------------------
-# Main workflow
+# Core forecast logic
 # -----------------------
-def main():
+def run_forecast():
+    global latest_results
+    
     print("="*60)
     print("CUSTOMER HAPPINESS FORECAST")
     print("="*60 + "\n")
     
-    df = load_data()
-    print(f"✅ Loaded {len(df)} months of data ({df['month'].min().strftime('%Y-%m')} to {df['month'].max().strftime('%Y-%m')})\n")
-
-    # Step 1: Nemotron reasoning
-    print("Step 1: Nemotron Analysis")
-    print("-" * 60)
-    nem_prompt = make_prompt_nemotron(df)
-    reasoning = call_nemotron(nem_prompt)
-    
-    if "unavailable" in reasoning.lower():
-        print(f"⚠️ {reasoning}\n")
-    else:
-        # Show truncated output
-        preview_len = 800
-        if len(reasoning) > preview_len:
-            print(reasoning[:preview_len] + "\n...[truncated]\n")
-        else:
-            print(reasoning + "\n")
-
-    # Step 2: Gemini numeric forecast
-    print("Step 2: Gemini Numeric Forecast")
-    print("-" * 60)
-    numeric_prompt = make_prompt_gemini(df)
+    latest_results["status"] = "running"
+    latest_results["timestamp"] = datetime.now().isoformat()
     
     try:
-        output_text = call_gemini(numeric_prompt)
-        forecast = parse_forecast(output_text)
-        if not forecast:
-            print("⚠️ Could not parse Gemini output, using fallback")
+        df = load_data()
+        print(f"Loaded {len(df)} months of data ({df['month'].min().strftime('%Y-%m')} to {df['month'].max().strftime('%Y-%m')})\n")
+
+        # Store historical data
+        latest_results["historical_data"] = df.to_dict('records')
+        for record in latest_results["historical_data"]:
+            record["month"] = record["month"].strftime("%Y-%m")
+
+        # Step 1: Nemotron reasoning
+        print("Step 1: Nemotron Analysis")
+        print("-" * 60)
+        nem_prompt = make_prompt_nemotron(df)
+        reasoning = call_nemotron(nem_prompt)
+        
+        # Store reasoning for API
+        latest_results["reasoning"] = reasoning
+        
+        if "unavailable" in reasoning.lower():
+            print(f"{reasoning}\n")
+        else:
+            # Show truncated output in terminal
+            preview_len = 800
+            if len(reasoning) > preview_len:
+                print(reasoning[:preview_len] + "\n...[truncated]\n")
+            else:
+                print(reasoning + "\n")
+
+        # Step 2: Gemini numeric forecast
+        print("Step 2: Gemini Numeric Forecast")
+        print("-" * 60)
+        numeric_prompt = make_prompt_gemini(df)
+        
+        try:
+            output_text = call_gemini(numeric_prompt)
+            forecast = parse_forecast(output_text)
+            if not forecast:
+                print("Could not parse Gemini output, using fallback")
+                forecast = simple_local_forecast(df)
+        except Exception as e:
+            print(f"Gemini failed: {e}")
+            print("Using local fallback forecast")
             forecast = simple_local_forecast(df)
+
+        # Store forecast for API
+        latest_results["forecast"] = forecast
+        latest_results["status"] = "completed"
+        latest_results["error"] = None
+
+        # Display results in terminal
+        print("\n" + "="*60)
+        print("FORECAST RESULTS")
+        print("="*60)
+        for k, v in forecast.items():
+            print(f"  {k}: {v:.2f}")
+        print("="*60 + "\n")
+
+        plot_forecast(df, forecast)
+        
     except Exception as e:
-        print(f"❌ Gemini failed: {e}")
-        print("Using local fallback forecast")
-        forecast = simple_local_forecast(df)
+        print(f"Error in forecast: {e}")
+        latest_results["status"] = "error"
+        latest_results["error"] = str(e)
 
-    # Display results
-    print("\n" + "="*60)
-    print("FORECAST RESULTS")
+# -----------------------
+# Flask API Endpoints
+# -----------------------
+
+@app.route('/api/forecast', methods=['GET'])
+def get_forecast():
+    """Get the latest forecast results"""
+    return jsonify(latest_results)
+
+@app.route('/api/reasoning', methods=['GET'])
+def get_reasoning():
+    """Get just the Nemotron reasoning"""
+    return jsonify({
+        "reasoning": latest_results.get("reasoning"),
+        "timestamp": latest_results.get("timestamp"),
+        "status": latest_results.get("status")
+    })
+
+@app.route('/api/run', methods=['POST'])
+def trigger_forecast():
+    """Trigger a new forecast run"""
+    if latest_results["status"] == "running":
+        return jsonify({
+            "message": "Forecast already running",
+            "status": "running"
+        }), 409
+    
+    # Run forecast in background thread
+    thread = Thread(target=run_forecast)
+    thread.daemon = True
+    thread.start()
+    
+    return jsonify({
+        "message": "Forecast started",
+        "status": "running"
+    }), 202
+
+@app.route('/api/status', methods=['GET'])
+def get_status():
+    """Get current status"""
+    return jsonify({
+        "status": latest_results["status"],
+        "timestamp": latest_results.get("timestamp"),
+        "has_results": latest_results["forecast"] is not None
+    })
+
+@app.route('/api/health', methods=['GET'])
+def health_check():
+    """Health check endpoint"""
+    return jsonify({"status": "healthy"})
+
+# -----------------------
+# Main workflow
+# -----------------------
+
+def main():
+    
     print("="*60)
-    for k, v in forecast.items():
-        print(f"  {k}: {v:.2f}")
+    print("Running initial forecast...")
+    print("="*60)
+    run_forecast()
+    
+    # Start Flask server
+    print("\n" + "="*60)
+    print("Starting Flask API server on http://localhost:5000")
+    print("="*60)
+    print("Available endpoints:")
+    print("  GET  /api/forecast  - Get complete forecast results")
+    print("  GET  /api/reasoning - Get Nemotron reasoning only")
+    print("  GET  /api/status    - Get current status")
+    print("  POST /api/run       - Trigger new forecast")
+    print("  GET  /api/health    - Health check")
     print("="*60 + "\n")
-
-    plot_forecast(df, forecast)
+    
+    app.run(debug=True, host='0.0.0.0', port=5000, use_reloader=False)
 
 if __name__ == "__main__":
     main()
-
