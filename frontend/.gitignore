@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+/public/counties-with-speed.geojson  
+./../backend/data/*.zip                         
+./../backend/data/*.geojson
 
 # next.js
 /.next/
