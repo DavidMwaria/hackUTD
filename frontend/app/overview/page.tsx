@@ -143,7 +143,7 @@ export default function OverviewPage() {
             )}
             
             {countySpeedData && (
-                <NorthAmericaMap countyData={countySpeedData} />
+                <NorthAmericaMap countyData={countySpeedData} forecastData={{}} />
             )}
             
             {!isLoading && !countySpeedData && (
