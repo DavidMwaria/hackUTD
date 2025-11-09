@@ -101,7 +101,7 @@ export default function MapWithConnector({
         setLoadingInfo(true);
         try {
           console.log("fetch")
-          const res = await fetch("http://localhost:5000/api/forecast");
+          const res = await fetch("http://localhost:5001/api/forecast");
           if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
           const json: ForecastResults = await res.json();
           setData(json);
