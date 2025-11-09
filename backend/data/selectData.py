@@ -27,7 +27,7 @@ def get_data_json(year, quarter):
         
     filename = f"mobile_data_{year}_Q{quarter}.csv"
     file_path = os.path.join(CSV_DIRECTORY, filename) 
-    
+    print(f"Requested file path: {file_path}")
     if not os.path.exists(file_path):
         # 404 error if the expected file is missing
         print(f"File not found: {file_path}")
@@ -36,7 +36,8 @@ def get_data_json(year, quarter):
     try:
         # 1. Read the CSV file into a Pandas DataFrame
         df = pd.read_csv(file_path)
-        
+        df['norm_d_kbps'] = (df['norm_d_kbps'] - df['norm_d_kbps'].min()) / (df['norm_d_kbps'].max() - df['norm_d_kbps'].min())
+        print(df['norm_d_kbps'].max())
         # 2. Convert the DataFrame to JSON
         # orient='records' converts to a list of dictionaries: [{}, {}, ...]
         # This is the easiest format for TypeScript/JavaScript to consume.

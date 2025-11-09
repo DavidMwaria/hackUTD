@@ -73,7 +73,7 @@ export default function OverviewPage() {
                     const prefixedGEOID = GEOID_PREFIX + foo; 
                     
                     // We're using avg_d_kbps directly for the map color value
-                    speedDictionary[prefixedGEOID] = row.norm_d_kbps; 
+                    speedDictionary[prefixedGEOID] = row.norm_d_kbps * 25; 
                 }
             });
 
