@@ -13,6 +13,7 @@ const navItems = [
   { href: "/dashboard", label: "Dashboard" },
   { href: "/chat", label: "Chat" },
   { href: "/profile", label: "Profile" },
+  { href: "/overview", label: "World Overview" },
 ]
 
 export function Navbar() {
