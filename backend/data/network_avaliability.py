@@ -1,11 +1,12 @@
-"""
- from datetime import datetime
+
+from datetime import datetime
 
 import geopandas as gp
 import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+import os
 
 from shapely.geometry import Point
 from adjustText import adjust_text
@@ -25,100 +26,109 @@ def get_tile_url(service_type: str, year: int, q: int) -> str:
     url = f"{base_url}/type%3D{service_type}/year%3D{dt:%Y}/quarter%3D{q}/{dt:%Y-%m-%d}_performance_{service_type}_tiles.zip"
     return url
 
-tile_url = get_tile_url("mobile", 2020, 2)
-print(tile_url)
-
-tiles = gp.read_file(tile_url)
-print(tiles.head())
-
 county_url = "https://www2.census.gov/geo/tiger/TIGER2019/COUNTY/tl_2019_us_county.zip" 
 counties = gp.read_file(county_url)
 
-ky_counties = counties.loc[counties['STATEFP'] == '21'].to_crs(4326) 
-ky_counties.head()
+all_counties = counties.loc[:, ["GEOID", "STATEFP", "COUNTYFP", "NAMELSAD", "geometry"]].to_crs(4326)
+all_counties.head()
 
-tiles_in_ky_counties = gp.sjoin(tiles, ky_counties, how="inner", predicate='intersects')
+import pandas as pd
+import geopandas as gpd
+import os
+import time # Optional: To track time per file
 
-tiles_in_ky_counties['avg_d_mbps'] = tiles_in_ky_counties['avg_d_kbps'] / 1000
-tiles_in_ky_counties['avg_u_mbps'] = tiles_in_ky_counties['avg_u_kbps'] / 1000
-tiles_in_ky_counties.head()
+# --- A. Environment Setup ---
+# Required for anonymous S3 access
+os.environ['AWS_NO_SIGN_REQUEST'] = 'YES'
 
-# def weighted_mean(group, avg_name, weight_name):
-#      http://stackoverflow.com/questions/10951341/pandas-dataframe-aggregate-function-using-multiple-columns
-#     In rare instance, we may not have weights, so just return the mean. Customize this if your business case
-#     should return otherwise.
-#     
-#     d = group[avg_name]
-#     w = group[weight_name]
-#     try:
-#         return (d * w).sum() / w.sum()
-#     except ZeroDivisionError:
-#         return d.mean()
-    
-county_stats = (
-    tiles_in_ky_counties.groupby(["GEOID", "NAMELSAD"])
-    .apply(
-        lambda x: pd.Series(
-            {"avg_d_mbps_wt": np.average(x["avg_d_mbps"], weights=x["tests"])}
-        )
-    )
-    .reset_index()
-    .merge(
-        tiles_in_ky_counties.groupby(["GEOID", "NAMELSAD"])
-        .agg(tests=("tests", "sum"))
-        .reset_index(),
-        on=["GEOID", "NAMELSAD"],
-    )
-)
-table_stats = (
-    county_stats.loc[county_stats["tests"] >= 50]
-    .nlargest(20, "avg_d_mbps_wt")
-    .append(
-        county_stats.loc[county_stats["tests"] >= 50].nsmallest(20, "avg_d_mbps_wt")
-    )
-    .sort_values("avg_d_mbps_wt", ascending=False)
-    .round(2) # round to 2 decimal places for easier reading
-)
-header = ["GEOID", "County", "Avg download speed (Mbps)", "Tests"]
+# --- B. Define Iteration Schedule ---
+YEARS = list(range(2019, 2025)) # 2019 through 2024
+QUARTERS = [1, 2, 3, 4]
 
-table_stats.rename(columns=dict(zip(table_stats.columns, header)))
+# --- C. Define Fixed Columns ---
+BASE_URL = "s3://ookla-open-data/parquet/performance/type=mobile/year={year}/quarter={quarter}/"
+FILENAME_PATTERN = "{year}-0{start_month}-01_performance_mobile_tiles.parquet"
 
-county_data = ky_counties[['GEOID', 'geometry']].merge(county_stats, on='GEOID').to_crs(26916)
-labels = ["0 to 25 Mbps", "25 to 50 Mbps", "50 to 100 Mbps", "100 to 150 Mbps", "150 to 200 Mbps"]
+# Columns to pull from Parquet (MINIMUM for spatial join and attributes)
+COLUMNS_TO_PULL = [
+    "tile_x", "tile_y",    # Coordinates for local geometry creation
+    "avg_d_kbps", "tests", "avg_u_kbps", 
+    "avg_lat_ms", "avg_lat_down_ms", "avg_lat_up_ms", "devices"
+]
 
-county_data['group'] = pd.cut(
-    county_data.avg_d_mbps_wt, 
-    (0, 25, 50, 100, 150, 200), 
-    right=False, 
-    labels = labels
-)
-# add place labels 
-ky_places = gp.read_file("ftp://ftp2.census.gov/geo/tiger/TIGER2019/PLACE/tl_2019_21_place.zip")
-ky_places = ky_places.loc[ky_places['PCICBSA'] >= "Y"].sample(15, random_state=1).to_crs(26916)
-ky_places["centroid"] = ky_places["geometry"].centroid
-ky_places.set_geometry("centroid", inplace = True)
-fig, ax = plt.subplots(1, figsize=(16, 6))
+# Columns to save to the final CSV
+COLUMNS_TO_SAVE = [
+    "GEOID", "NAMELSAD", # Added by spatial join
+    "avg_d_kbps", "tests", "avg_u_kbps", 
+    "avg_lat_ms", "avg_lat_down_ms", "avg_lat_up_ms", "devices",
+]
 
-county_data.plot(
-    column="group", cmap="BuPu", linewidth=0.4, ax=ax, edgecolor="0.1", legend=True
-)
+# --- D. Main Loop ---
+for year in YEARS:
+    for quarter in QUARTERS:
+        
+        # 1. Determine the path for the current quarter
+        start_month = (quarter * 3) - 2 # Q1=1, Q2=4, Q3=7, Q4=10
+        
+        # Ookla file names before 2023 Q3 sometimes used a different date pattern.
+        # This structure works best for the newer data and is robust.
+        # We need a robust file name that handles the variable structure of Ookla data:
+        if year < 2023 or (year == 2023 and quarter <= 2):
+            # Use a slightly older date format for older data
+             date_part = f"{year}-0{start_month}-01"
+        else:
+             # This is the modern format, used in your example
+             date_part = f"{year}-10-01" if (year == 2024 and quarter == 4) else f"{year}-0{start_month}-01"
+        
+        # Handle single-digit month formatting (e.g., Q4 is 10, not 010)
+        if start_month == 10:
+             date_part = f"{year}-10-01"
 
-ax.axis("off")
+        filename = f"{date_part}_performance_mobile_tiles.parquet"
+        
+        # Final S3 path
+        s3_path = f"s3://ookla-open-data/parquet/performance/type=mobile/year={year}/quarter={quarter}/{filename}"
+        
+        output_filename = f"mobile_data_{year}_Q{quarter}.csv"
+        
+        print(f"\n--- Starting {year} Q{quarter} ({s3_path}) ---")
+        start_time = time.time()
 
-leg = ax.get_legend()
-leg.set_bbox_to_anchor((1.15, 0.3))
-leg.set_title("Mean download speed (Mbps)\nin Kentucky Counties")
+        try:
+            # --- 2. Fast Remote Load (Parquet) ---
+            df_attributes_and_coords = pd.read_parquet(
+                s3_path,
+                columns=COLUMNS_TO_PULL, 
+                storage_options={'anon': True} 
+            )
 
-texts = []
-for x, y, label in zip(ky_places.geometry.x, ky_places.geometry.y, ky_places["NAME"]):
-    texts.append(plt.text(x, y, label, fontsize=10, fontweight="bold", ha="left"))
+            # --- 3. Local Geometry Creation ---
+            full_tiles_gdf = gpd.GeoDataFrame(
+                df_attributes_and_coords.drop(columns=['tile_x', 'tile_y']), 
+                geometry=gpd.points_from_xy(
+                    df_attributes_and_coords['tile_x'], 
+                    df_attributes_and_coords['tile_y']
+                ),
+                crs=4326
+            )
+            
+            # --- 4. Spatial Join ---
+            merged_data = gpd.sjoin(
+                full_tiles_gdf, 
+                all_counties, 
+                how="inner", 
+                predicate="within" 
+            )
 
-adjust_text(
-    texts,
-    force_points=0.3,
-    force_text=0.8,
-    expand_points=(1, 1),
-    expand_text=(1, 1),
-    arrowprops=dict(arrowstyle="-", color="black", lw=0.5),
-)
-"""
+            # --- 5. Attribute Save ---
+            attribute_df = merged_data[COLUMNS_TO_SAVE]
+            
+            # Use relative path to avoid PermissionError
+            attribute_df.to_csv(f"./{output_filename}", index=False)
+            
+            end_time = time.time()
+            print(f"✅ Success! Data saved to {output_filename}. Time: {end_time - start_time:.2f} seconds.")
+
+        except Exception as e:
+            print(f"❌ Failed to process {year} Q{quarter}. Error: {e}")
+            # This continues the loop if one file fails
