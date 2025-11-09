@@ -53,7 +53,7 @@ export function LandingPage() {
         <motion.div variants={containerVariants} initial="hidden" animate="visible" className="text-center">
           {/* Headline */}
           <motion.div variants={itemVariants} className="mb-6">
-            <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary mb-4">
+            <span className="inline-flex items-center rounded-full bg-[#E40878]/10 px-4 py-2 text-sm font-medium text-[#E40878] mb-4">
               <Sparkles className="mr-2 h-4 w-4" />
               Welcome to the future
             </span>
@@ -63,9 +63,9 @@ export function LandingPage() {
             variants={itemVariants}
             className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-balance"
           >
-            Build faster with a
+            Understand The Core
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">
-              modern template
+              Of Business
             </span>
           </motion.h1>
 
@@ -73,7 +73,7 @@ export function LandingPage() {
             variants={itemVariants}
             className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-balance"
           >
-            Everything you need to ship your next idea. Beautiful UI, smooth animations, and production-ready code.
+            Everything you need to help your users. Giving the consensus through understanding.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -84,9 +84,9 @@ export function LandingPage() {
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
-            <Link href="/chat">
+            <Link href="/overview">
               <Button size="lg" variant="outline">
-                Try the Chat
+                Try the Map
               </Button>
             </Link>
           </motion.div>

@@ -11,8 +11,6 @@ import { useEffect, useState } from "react"
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/dashboard", label: "Dashboard" },
-  { href: "/chat", label: "Chat" },
-  { href: "/profile", label: "Profile" },
   { href: "/overview", label: "World Overview" },
 ]
 
@@ -30,10 +28,10 @@ export function Navbar() {
           {/* Logo */}
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
             <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-primary-foreground">
-                ◆
+              <div className="w-8 h-8 bg-[#E40878] rounded-lg flex items-center justify-center text-primary-foreground">
+                ❤︎
               </div>
-              <span>HackUTD25 Template</span>
+              <span>PulseCheck</span>
             </Link>
           </motion.div>
 
