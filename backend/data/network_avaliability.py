@@ -1,4 +1,3 @@
-
 from datetime import datetime
 
 import geopandas as gp
@@ -56,10 +55,12 @@ COLUMNS_TO_PULL = [
     "avg_lat_ms", "avg_lat_down_ms", "avg_lat_up_ms", "devices"
 ]
 
-# Columns to save to the final CSV
+# ❗ UPDATED: Added new normalized columns here ❗
 COLUMNS_TO_SAVE = [
     "GEOID", "NAMELSAD", # Added by spatial join
-    "avg_d_kbps", "tests", "avg_u_kbps", 
+    "avg_d_kbps", "norm_d_kbps", # <-- NEW
+    "avg_u_kbps", "norm_u_kbps", # <-- NEW
+    "tests", 
     "avg_lat_ms", "avg_lat_down_ms", "avg_lat_up_ms", "devices",
 ]
 
@@ -120,8 +121,30 @@ for year in YEARS:
                 predicate="within" 
             )
 
-            # --- 5. Attribute Save ---
-            attribute_df = merged_data[COLUMNS_TO_SAVE]
+            # --- 5. NORMALIZATION CALCULATION (NEW) ---
+            
+            def min_max_normalize(series: pd.Series) -> pd.Series:
+                """Performs Min-Max normalization on a Pandas Series."""
+                min_val = series.min()
+                max_val = series.max()
+                # Use np.where to handle division by zero (if max == min)
+                return np.where(
+                    max_val != min_val, 
+                    (series - min_val) / (max_val - min_val), 
+                    0
+                )
+
+            # Apply normalization to the download speed (avg_d_kbps)
+            merged_data['norm_d_kbps'] = min_max_normalize(merged_data['avg_d_kbps'])
+            
+            # Apply normalization to the upload speed (avg_u_kbps)
+            merged_data['norm_u_kbps'] = min_max_normalize(merged_data['avg_u_kbps'])
+            
+            # --- END NORMALIZATION ---
+
+            # --- 6. Attribute Save ---
+            # Now includes the new normalized columns
+            attribute_df = merged_data[COLUMNS_TO_SAVE] 
             
             # Use relative path to avoid PermissionError
             attribute_df.to_csv(f"./{output_filename}", index=False)
