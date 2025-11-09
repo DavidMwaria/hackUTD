@@ -66,7 +66,7 @@ export function DashboardContent() {
   const [chartDataState, setChartDataState] = useState<any[]>([])
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/forecast")
+    fetch("http://localhost:5001/api/forecast")
       .then((res) => res.json())
       .then((data: ForecastData) => {
         // Historical
@@ -142,7 +142,7 @@ export function DashboardContent() {
                   {bottomCounties.map((county, index) => (
                     <li key={index} className="py-2 flex justify-between">
                       <span>{county.name}</span>
-                      <span className="font-bold text-[#E40878]">{county.value.toFixed(2)}</span>
+                      <span className="font-bold text-[#E40878]">{county.value.toFixed(5)}</span>
                     </li>
                   ))}
                 </ul>
@@ -159,7 +159,7 @@ export function DashboardContent() {
                   {topCounties.map((county, index) => (
                     <li key={index} className="py-2 flex justify-between">
                       <span>{county.name}</span>
-                      <span className="font-bold text-[#E40878]">{county.value.toFixed(2)}</span>
+                      <span className="font-bold text-[#E40878]">{county.value.toFixed(5)}</span>
                     </li>
                   ))}
                 </ul>
