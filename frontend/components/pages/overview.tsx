@@ -269,14 +269,16 @@ export default function MapWithConnector({
         const features = map.current!.queryRenderedFeatures(e.point, { layers: ["county-fills"] });
         if (features.length > 0) {
           const keys: string[] = features[0].properties ? Object.keys(features[0].properties) : [];
-          console.log("Length " + keys);
+          console.log(keys);
           const feature = features[0];
           const geoid = feature.properties?.GEO_ID as string;
           console.log("Selected: "+ geoid);
           const name = feature.properties?.NAME as string;
           const centroid = turf.centroid(feature as any).geometry.coordinates as [number, number];
           const value = countyData[geoid] ?? 0;
+          console.log("Selected: "+ name, value, centroid);
           setSelectedCounty({ GEOID: geoid, NAME: name, value, centroid });
+          setCountyInfo(  {overallSentiment: "string", problemsReported: "string", futureOutlook: "string", value: value} as CountyInfo)
         } else {
           setSelectedCounty(null);
         }
@@ -377,17 +379,25 @@ export default function MapWithConnector({
               <p className="text-white text-center">Loading info...</p>
             ) : countyInfo ? (
               <>
-                {Object.entries(countyInfo).map(([title, content]) => (
-                  <div key={title} className="mb-4">
-                    <p className="text-[#E40878] font-bold text-center">{title.replace(/([A-Z])/g, ' $1').replace(/^./, c => c.toUpperCase())}</p>
-                    <p className="text-white text-center">{content}</p>
-                  </div>
-                ))}
-                <p className="text-white">Value: {selectedCounty.value.toFixed(2)}</p>
+                {Object.entries(countyInfo)
+    // 1. Filter: Keep only the entries where the key (title) matches the desired string
+    .filter(([title, content]) => title === "value")
+    
+    // 2. Map: Render the filtered entries
+    .map(([title, content]) => (
+        <div key={title} className="mb-4">
+            <p className="text-4xl text-[#E40878] font-bold text-center">
+                Satisfaction
+            </p>
+            <p className="text-white text-2xl text-center">{content.toFixed(3)}</p>
+        </div>
+    ))
+}
+                <p className="text-white"></p>
                 {apiData?.reasoning && (
                   <div className="mb-4">
                     <p className="text-[#E40878] font-bold text-center">Forecast Reasoning</p>
-                    <p className="text-white text-center">{apiData.reasoning}</p>
+                    <p className="text-white  text-center">{apiData.reasoning}</p>
                   </div>
                 )}
               </>
