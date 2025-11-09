@@ -16,34 +16,52 @@ interface SelectedCounty {
   centroid: [number, number]; // [lng, lat]
 }
 
-export default function MapWithConnector({ countyData }: { countyData: CountyData }) {
+export default function MapWithConnector({
+  countyData,
+  forecastData, // { [GEOID]: percentChange } e.g., 0.05 for +5%
+}: {
+  countyData: CountyData;
+  forecastData: Record<string, number>;
+}) {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   const [selectedCounty, setSelectedCounty] = useState<SelectedCounty | null>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const infoBoxRef = useRef<HTMLDivElement>(null);
-  
-  // Deselect county on map click
+
+  const [colorByForecast, setColorByForecast] = useState(false);
+
+  interface CountyInfo {
+    overallSentiment: string;
+    problemsReported: string;
+    futureOutlook: string;
+    value: number;
+    forecastChange?: number;
+  }
+
+  const [countyInfo, setCountyInfo] = useState<CountyInfo | null>(null);
+  const [loadingInfo, setLoadingInfo] = useState(false);
+
+
+  // Fetch info when selectedCounty changes
   useEffect(() => {
-  if (!map.current) return;
+    if (!selectedCounty) {
+      setCountyInfo(null);
+      return;
+    }
 
-    const handleMapClick = (e: mapboxgl.MapMouseEvent) => {
-      const features = map.current!.queryRenderedFeatures(e.point, {
-        layers: ["county-fills"],
+    setLoadingInfo(true);
+    fetch(`/api/county-info?geoid=${selectedCounty.GEOID}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCountyInfo(data);
+        setLoadingInfo(false);
+      })
+      .catch(() => {
+        setCountyInfo(null);
+        setLoadingInfo(false);
       });
-
-      console.log("Map clicked, features:", features);
-      if (!features.length) {
-        setSelectedCounty(null); // deselect when clicking off
-      }
-    };
-
-    map.current.on("click", handleMapClick);
-
-    return () => {
-      map.current!.off("click", handleMapClick);
-    };
-  }, []);
+  }, [selectedCounty]);
 
   // Update lines on map interactions
   useEffect(() => {
@@ -101,8 +119,10 @@ export default function MapWithConnector({ countyData }: { countyData: CountyDat
       map.current!.off("rotate", updateLines);
     };
   }, [selectedCounty]);
-  
+
+  // -------------------------
   // Initialize map
+  // -------------------------
   useEffect(() => {
     if (!mapContainer.current || map.current) return;
 
@@ -118,32 +138,46 @@ export default function MapWithConnector({ countyData }: { countyData: CountyDat
         type: "geojson",
         data: "/us-counties.geojson",
       });
+      
+      const addCountyLayer = () => {
+        const colorScale = d3.scaleSequential()
+          .domain([0, 1]) // 0 = no increase, 1 = max increase
+          .interpolator(d3.interpolateRgb("#ffffff", "#e40878"));
 
-      const colorScale = d3.scaleSequential(d3.interpolateRdYlGn).domain([0, 1]);
+        map.current!.addLayer({
+          id: "county-fills",
+          type: "fill",
+          source: "us-counties",
+          paint: {
+            "fill-color": [
+              "match",
+              ["get", "GEO_ID"],
+              ...Object.entries(countyData).flatMap(([geoid, value]) => {
+                let color: string;
+                if (colorByForecast) {
+                  const pct = forecastData[geoid] ?? 0;
+                  color = pct >= 0 ? d3.interpolateGreens(pct) : d3.interpolateReds(-pct);
+                } else {
+                  color = colorScale(value);
+                }
+                return [geoid, color];
+              }),
+              "#ccc",
+            ],
+            "fill-opacity": 0.8,
+          },
+        });
 
-      map.current!.addLayer({
-        id: "county-fills",
-        type: "fill",
-        source: "us-counties",
-        paint: {
-          "fill-color": [
-            "match",
-            ["get", "GEO_ID"],
-            ...Object.entries(countyData).flatMap(([geoid, value]) => [geoid, colorScale(value)]),
-            "#ccc",
-          ],
-          "fill-opacity": 0.8,
-        },
-      });
+        map.current!.addLayer({
+          id: "county-borders",
+          type: "line",
+          source: "us-counties",
+          paint: { "line-color": "#bbb", "line-width": 0.5 },
+        });
+      };
 
-      map.current!.addLayer({
-        id: "county-borders",
-        type: "line",
-        source: "us-counties",
-        paint: { "line-color": "#bbb", "line-width": 0.5 },
-      });
+      addCountyLayer();
 
-      // Click handler
       // Handle clicks on the map (both on and off counties)
       map.current!.on("click", (e) => {
         const features = map.current!.queryRenderedFeatures(e.point, {
@@ -155,32 +189,61 @@ export default function MapWithConnector({ countyData }: { countyData: CountyDat
           const geoid = feature.properties?.GEOID as string;
           const name = feature.properties?.NAME as string;
 
-          // Compute centroid using turf
           const centroid = turf.centroid(feature as any).geometry.coordinates as [number, number];
-
           const value = countyData[geoid] ?? 0;
           setSelectedCounty({ GEOID: geoid, NAME: name, value, centroid });
         } else {
-          // Clicked outside any county → deselect
           setSelectedCounty(null);
         }
       });
-
     });
   }, [countyData]);
 
+  // -------------------------
+  // Update county colors when toggle changes
+  // -------------------------
+  useEffect(() => {
+    if (!map.current?.getLayer("county-fills")) return;
+
+    const colorScale = d3.scaleSequential()
+      .domain([0, 1]) // 0 = no increase, 1 = max increase
+      .interpolator(d3.interpolateRgb("#ffffff", "#e40878"));
+    const paint: any = map.current.getPaintProperty("county-fills", "fill-color");
+
+    map.current!.setPaintProperty(
+      "county-fills",
+      "fill-color",
+      [
+        "match",
+        ["get", "GEO_ID"],
+        ...Object.entries(countyData).flatMap(([geoid, value]) => {
+          let color: string;
+          if (colorByForecast) {
+            const pct = forecastData[geoid] ?? 0;
+            color = pct >= 0 ? d3.interpolateGreens(pct) : d3.interpolateReds(-pct);
+          } else {
+            color = colorScale(value);
+          }
+          return [geoid, color];
+        }),
+        "#ccc",
+      ]
+    );
+  }, [colorByForecast]);
+
+  // -------------------------
   // Draw dotted lines
+  // -------------------------
   useEffect(() => {
     const svg = d3.select(svgRef.current);
-    svg.selectAll("*").remove(); // always clear existing lines first
+    svg.selectAll("*").remove();
 
     if (!selectedCounty || !map.current || !infoBoxRef.current) return;
 
     const infoBoxRect = infoBoxRef.current.getBoundingClientRect();
     const mapContainerRect = mapContainer.current!.getBoundingClientRect();
-
     const [lng, lat] = selectedCounty.centroid;
-    const point = map.current.project([lng, lat]); // screen coordinates
+    const point = map.current.project([lng, lat]);
 
     const startX = point.x;
     const startY = point.y;
@@ -203,9 +266,27 @@ export default function MapWithConnector({ countyData }: { countyData: CountyDat
     });
   }, [selectedCounty]);
 
-
   return (
     <div className="flex w-full h-screen relative">
+{/* Toggle switch */}
+<div className="absolute top-4 left-4 z-30 flex items-center space-x-2">
+  <span className="text-white font-semibold">Color by Value</span>
+  <div
+    className={`relative w-12 h-6 rounded-full transition-colors duration-300 ${
+      colorByForecast ? "bg-pink-600" : "bg-gray-300"
+    }`}
+    onClick={() => setColorByForecast(!colorByForecast)}
+  >
+    <div
+      className={`absolute top-0.5 left-0.5 w-5 h-5 bg-white rounded-full shadow transform transition-transform duration-300 ${
+        colorByForecast ? "translate-x-6" : "translate-x-0"
+      }`}
+    />
+  </div>
+  <span className="text-white font-semibold">Color by Forecast</span>
+</div>
+
+
       <div ref={mapContainer} className="flex-1 relative z-0" />
       <svg
         ref={svgRef}
@@ -213,30 +294,44 @@ export default function MapWithConnector({ countyData }: { countyData: CountyDat
         style={{ zIndex: 10 }}
       />
       <div
-        ref={infoBoxRef}
-        className={`min-w-60 max-w-100 m-8 p-4 pb-16 border-1 border-gray-400 bg-linear-to-b from-white to-gray-50/10 absolute right-0 top-0 h-auto z-20
-          transition-opacity duration-500 ease-out rounded-r-lg shadow-lg 
-          ${selectedCounty ? "opacity-100" : "opacity-0"}`}
-      >
-        {selectedCounty ? (
-          <>
-            <h2 className="font-bold text-[#1869FF] text-2xl mb-2 text-center">{selectedCounty.NAME} County</h2>
-            <p className="text-black font-bold text-center">Overall Sentiment:</p>
-            <p className="text-black">Residents of {selectedCounty.NAME} County have mixed feelings about T-Mobile. Many appreciate the company’s affordable plans and improved 5G coverage in urban areas.</p>
-            
-            <p className="text-black font-bold text-center">Problems Reported:</p>
-            <p className="text-black">Rural parts of the county still face frequent signal drops and slow data speeds. Some residents also mention inconsistent customer support and billing issues.</p>
-            
-            <p className="text-black font-bold text-center">Future Outlook:</p>
-            <p className="text-black">T-Mobile’s recent promise to expand rural infrastructure has given locals cautious optimism that service reliability will improve in the coming year.</p>
-            
-            <p className="text-black">Value: {selectedCounty.value.toFixed(2)}</p>
-          </>
-        ) : (
-          <p>Click a county to see details</p>
-        )}
+  ref={infoBoxRef}
+  className={`min-w-60 max-w-100 m-8 p-4 pb-16 border-1 border-gray-50 bg-black/80  absolute right-0 top-0 h-auto z-20
+    transition-opacity duration-500 ease-out rounded-r-lg shadow-lg 
+    ${selectedCounty ? "opacity-100" : "opacity-0"}`}
+>
+  {selectedCounty ? (
+    <>
+      <div className="p-2 bg-white/80 rounded-4xl mb-4">
+        <h2 className="font-bold text-[#1869FF] text-2xl mb-2 text-center">
+          {selectedCounty.NAME} County
+        </h2>
       </div>
 
+      {loadingInfo ? (
+        <p className="text-white text-center">Loading info...</p>
+      ) : countyInfo ? (
+        <>
+          {Object.entries(countyInfo).map(([title, content]) => (
+            <div key={title} className="mb-4">
+              <p className="text-[#E40878] font-bold text-center">{title}</p>
+              <p className="text-white">{content}</p>
+            </div>
+          ))}
+          <p className="text-white">Value: {selectedCounty.value.toFixed(2)}</p>
+          {colorByForecast && (
+            <p className="text-white">
+              Forecast Change: {(forecastData[selectedCounty.GEOID] ?? 0) * 100}%
+            </p>
+          )}
+        </>
+      ) : (
+        <p className="text-white text-center">No data available</p>
+      )}
+    </>
+  ) : (
+    <p>Click a county to see details</p>
+  )}
+</div>
 
     </div>
   );
