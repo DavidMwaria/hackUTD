@@ -1,0 +1,70 @@
+import pandas as pd
+import re
+from collections import Counter
+import nltk
+from textblob import TextBlob
+
+# Download stopwords
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+
+# --------------------
+# SETTINGS
+# --------------------
+stop_words = set(stopwords.words('english'))
+tweets_file = "tmobile_tweets.csv"  # <-- Change this to your file path
+tweets_column = 'text'  # Column in CSV containing tweet text
+max_top_words = 20  # Number of top issues to extract
+
+# --------------------
+# LOAD DATASET
+# --------------------
+try:
+    df = pd.read_csv(tweets_file)
+except FileNotFoundError:
+    raise FileNotFoundError(f"CSV file not found at {tweets_file}. Check the path.")
+
+# --------------------
+# CLEAN AND TOKENIZE
+# --------------------
+def clean_text(text):
+    text = str(text).lower()
+    text = re.sub(r"http\S+|www\S+|https\S+|@\S+|#\S+|[^a-z\s]", '', text)
+    words = text.split()
+    words = [w for w in words if w not in stop_words and len(w) > 2]
+    return words
+
+df['cleaned_text'] = df[tweets_column].apply(lambda x: " ".join(clean_text(x)))
+
+all_words = []
+for tweet in df['cleaned_text']:
+    all_words.extend(tweet.split())
+
+# --------------------
+# EXTRACT TOP KEY ISSUES
+# --------------------
+common_words = Counter(all_words).most_common(max_top_words)
+
+# Create CSV with key issues and frequency
+issues_data = []
+for word, count in common_words:
+    # Calculate average sentiment for tweets containing this word
+    relevant_tweets = df[df['cleaned_text'].str.contains(rf'\b{word}\b')]
+    sentiments = relevant_tweets['cleaned_text'].apply(lambda x: TextBlob(x).sentiment.polarity)
+    avg_sentiment = sentiments.mean() if not sentiments.empty else 0
+    issues_data.append({"issue": word, "count": count, "avg_sentiment": avg_sentiment})
+
+issues_df = pd.DataFrame(issues_data)
+issues_df.to_csv("tmobile_tweets_issues.csv", index=False)
+
+# --------------------
+# SAVE CLEANED TWEETS
+# --------------------
+df.to_csv("tmobile_tweets_cleaned.csv", index=False)
+
+# --------------------
+# PRINT RESULTS
+# --------------------
+print("\nTop key issues saved to 'tmobile_tweets_issues.csv':")
+print(issues_df.head(max_top_words))
+print("\nCleaned tweets saved to 'tmobile_tweets_cleaned.csv'.")

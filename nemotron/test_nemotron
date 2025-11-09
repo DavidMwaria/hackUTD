@@ -1,0 +1,370 @@
+#!/usr/bin/env python3
+"""
+hybrid_forecast_gemini_v6_nemotron_debug.py
+- Loads customer_happiness.csv
+- Calls Gemini 2.5 for numeric forecast (forced output)
+- Calls Nemotron for reasoning/explanation with FULL debugging
+- Falls back to local linear forecast if Gemini fails
+- Plots numeric forecast
+"""
+
+import os, re, json
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+import pandas as pd
+import matplotlib.pyplot as plt
+import requests
+import time
+
+# -----------------------
+# Load CSV
+# -----------------------
+def load_data(path="customer_happiness.csv"):
+    df = pd.read_csv(path, parse_dates=["month"])
+    if df["month"].dtype == "object":
+        df["month"] = pd.to_datetime(df["month"], format="%Y-%m")
+    return df.sort_values("month").reset_index(drop=True)
+
+# -----------------------
+# Gemini prompt (always return numeric)
+# -----------------------
+def make_prompt_gemini(df, months=6, forecast_months=3):
+    subset = df.tail(months)
+    rows = "\n".join([f"{row.month.strftime('%Y-%m')}: {row.happiness_index}" for _, row in subset.iterrows()])
+    last_date = subset.iloc[-1]["month"]
+    
+    # Generate the exact months to forecast
+    forecast_dates = []
+    for i in range(1, forecast_months + 1):
+        next_month = last_date + relativedelta(months=i)
+        forecast_dates.append(next_month.strftime("%Y-%m"))
+    
+    return f"""You are a forecasting assistant. Based on this customer happiness data:
+
+{rows}
+
+Predict the happiness index for these exact months:
+{chr(10).join(forecast_dates)}
+
+Respond ONLY with this exact format (one per line, no extra text):
+{forecast_dates[0]} → [numeric value]
+{forecast_dates[1]} → [numeric value]
+{forecast_dates[2]} → [numeric value]
+
+Example format:
+2024-11 → 7.15
+2024-12 → 7.20
+2025-01 → 7.25"""
+
+# -----------------------
+# Nemotron prompt
+# -----------------------
+def make_prompt_nemotron(df, months=6):
+    subset = df.tail(months)
+    rows = "\n".join([f"{row.month.strftime('%Y-%m')}: {row.happiness_index}" for _, row in subset.iterrows()])
+    return f"""Analyze the following customer happiness data and provide detailed reasoning for forecasting the next 3 months.
+
+Historical Data:
+{rows}
+
+Provide:
+1. Analysis of the trend (increasing, decreasing, stable, volatile)
+2. Key patterns or anomalies you observe
+3. Your reasoning for the next 3 months forecast
+4. Confidence level in your forecast
+
+Be specific and thorough in your analysis."""
+
+# -----------------------
+# Nemotron API call
+# -----------------------
+def call_nemotron(prompt, max_retries=3):
+    api_key = os.getenv("OPENROUTER_API_KEY")
+    if not api_key:
+        print("❌ OPENROUTER_API_KEY not set")
+        return "Nemotron reasoning unavailable: No API key found."
+
+    # List of Nemotron models to try
+    model_variants = [
+        "nvidia/llama-3.1-nemotron-70b-instruct",
+        "nvidia/llama-3.1-nemotron-51b-instruct", 
+        "meta-llama/llama-3.1-70b-instruct",
+    ]
+    
+    # Check if user specified a model
+    user_model = os.getenv("NEMOTRON_MODEL_ID")
+    if user_model:
+        model_variants.insert(0, user_model)
+    
+    endpoint = "https://openrouter.ai/api/v1/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {api_key}", 
+        "Content-Type": "application/json",
+        "HTTP-Referer": "https://github.com/hackathon-forecast",
+        "X-Title": "Customer Happiness Forecast"
+    }
+    
+    # Try each model variant
+    for model_id in model_variants:
+        body = {
+            "model": model_id,
+            "messages": [
+                {"role": "system", "content": "You are Nemotron, an expert reasoning assistant for forecasting analysis. Provide detailed, step-by-step reasoning."},
+                {"role": "user", "content": prompt}
+            ],
+            "max_tokens": 1000,
+            "temperature": 0.7,
+            "top_p": 0.9,
+        }
+        
+        for attempt in range(max_retries):
+            try:
+                resp = requests.post(endpoint, headers=headers, json=body, timeout=90)
+                
+                # Handle specific error codes
+                if resp.status_code == 429:
+                    if attempt < max_retries - 1:
+                        time.sleep(15 * (attempt + 1))
+                        continue
+                    break
+                elif resp.status_code == 404:
+                    break  # Try next model
+                elif resp.status_code == 402:
+                    print("❌ OpenRouter credits exhausted")
+                    return "Nemotron reasoning unavailable: No credits"
+                elif resp.status_code == 401:
+                    print("❌ Invalid API key")
+                    return "Nemotron reasoning unavailable: Invalid API key"
+                elif resp.status_code != 200:
+                    if attempt < max_retries - 1:
+                        time.sleep(5)
+                        continue
+                    break
+                
+                # Parse response
+                data = resp.json()
+                
+                if "error" in data:
+                    print(f"❌ API Error: {data['error'].get('message', 'Unknown error')}")
+                    break
+                
+                # Extract content
+                if "choices" in data and len(data["choices"]) > 0:
+                    content = data["choices"][0]["message"].get("content", "")
+                    if content and content.strip():
+                        print(f"✅ Nemotron analysis received ({len(content)} chars)")
+                        return content
+                
+                # Empty response, retry
+                if attempt < max_retries - 1:
+                    continue
+                    
+            except requests.exceptions.Timeout:
+                if attempt < max_retries - 1:
+                    continue
+            except requests.exceptions.RequestException as e:
+                if attempt < max_retries - 1:
+                    time.sleep(5)
+                    continue
+            except Exception as e:
+                print(f"❌ Error: {type(e).__name__}: {e}")
+                if attempt < max_retries - 1:
+                    continue
+    
+    # All models failed
+    print("❌ All Nemotron models failed")
+    return "Nemotron reasoning unavailable: All models and retries exhausted."
+
+# -----------------------
+# Gemini API call
+# -----------------------
+def call_gemini(prompt):
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        raise RuntimeError("Set GEMINI_API_KEY in your environment.")
+
+    model_name = "gemini-2.0-flash-exp"
+    endpoint = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
+
+    body = {
+        "contents": [{
+            "parts": [{"text": prompt}]
+        }],
+        "generationConfig": {
+            "temperature": 0.1,
+            "maxOutputTokens": 1000,
+            "topP": 0.8,
+            "topK": 10
+        }
+    }
+
+    headers = {"Content-Type": "application/json"}
+    
+    try:
+        response = requests.post(endpoint, headers=headers, json=body, timeout=30)
+        response.raise_for_status()
+        data = response.json()
+        
+        if "candidates" in data and len(data["candidates"]) > 0:
+            candidate = data["candidates"][0]
+            if "content" in candidate:
+                content = candidate["content"]
+                if "parts" in content and len(content["parts"]) > 0:
+                    output_text = content["parts"][0].get("text", "")
+                else:
+                    raise ValueError("No parts in content")
+            else:
+                raise ValueError("No content in candidate")
+        else:
+            raise ValueError("No candidates in response")
+        
+        if not output_text.strip():
+            raise ValueError("Gemini returned empty text content")
+        
+        print(f"✅ Gemini forecast received")
+        return output_text
+        
+    except Exception as e:
+        print(f"❌ Gemini error: {e}")
+        raise
+
+# -----------------------
+# Parse Gemini free-text forecast
+# -----------------------
+def parse_forecast(text):
+    forecast = {}
+    patterns = [
+        r"(\d{4}-\d{2})\s*[→:→]\s*([0-9.]+)",
+        r"(\d{4}-\d{2})\s+([0-9.]+)",
+        r"(\d{4}-\d{2}).*?([0-9]+\.[0-9]+)",
+    ]
+    
+    for pattern in patterns:
+        matches = re.findall(pattern, text)
+        if matches:
+            for month, val in matches:
+                try:
+                    forecast[month] = float(val)
+                except ValueError:
+                    continue
+            if forecast:
+                break
+    
+    return forecast
+
+# -----------------------
+# Local fallback
+# -----------------------
+def simple_local_forecast(df, months_ahead=3):
+    y = df["happiness_index"].astype(float).values
+    last_month = df["month"].iloc[-1]
+    slope = (y[-1] - y[0]) / max(1, len(y)-1)
+    forecast = {}
+    for i in range(1, months_ahead + 1):
+        m = last_month + relativedelta(months=i)
+        forecast[m.strftime("%Y-%m")] = round(y[-1] + slope * i, 3)
+    return forecast
+
+# -----------------------
+# Plotting
+# -----------------------
+def plot_forecast(df, forecast):
+    plt.figure(figsize=(12,6))
+    
+    plt.plot(df["month"], df["happiness_index"], 
+             marker="o", markersize=8, linewidth=2, 
+             label="Historical", color="#1f77b4")
+    
+    months = [datetime.strptime(k, "%Y-%m") for k in forecast.keys()]
+    vals = list(forecast.values())
+    plt.plot(months, vals, 
+             marker="o", markersize=8, linewidth=2, 
+             linestyle="--", label="Forecast", color="#ff7f0e")
+    
+    for month, val in zip(df["month"], df["happiness_index"]):
+        plt.annotate(f'{val:.2f}', 
+                    xy=(month, val), 
+                    xytext=(0, 8), 
+                    textcoords='offset points',
+                    ha='center', fontsize=8, color='#1f77b4')
+    
+    for month, val in zip(months, vals):
+        plt.annotate(f'{val:.2f}', 
+                    xy=(month, val), 
+                    xytext=(0, 8), 
+                    textcoords='offset points',
+                    ha='center', fontsize=8, color='#ff7f0e', weight='bold')
+    
+    plt.xticks(rotation=45, ha='right')
+    plt.xlabel("Month", fontsize=12, fontweight='bold')
+    plt.ylabel("Happiness Index", fontsize=12, fontweight='bold')
+    plt.title("Customer Happiness Forecast", fontsize=14, fontweight='bold', pad=20)
+    
+    plt.grid(True, alpha=0.3, linestyle=':', linewidth=0.5)
+    
+    all_values = list(df["happiness_index"]) + vals
+    y_min = min(all_values) - 0.2
+    y_max = max(all_values) + 0.3
+    plt.ylim(y_min, y_max)
+    
+    plt.legend(loc='best', framealpha=0.9, fontsize=11)
+    
+    plt.tight_layout()
+    plt.show()
+
+# -----------------------
+# Main workflow
+# -----------------------
+def main():
+    print("="*60)
+    print("CUSTOMER HAPPINESS FORECAST")
+    print("="*60 + "\n")
+    
+    df = load_data()
+    print(f"✅ Loaded {len(df)} months of data ({df['month'].min().strftime('%Y-%m')} to {df['month'].max().strftime('%Y-%m')})\n")
+
+    # Step 1: Nemotron reasoning
+    print("Step 1: Nemotron Analysis")
+    print("-" * 60)
+    nem_prompt = make_prompt_nemotron(df)
+    reasoning = call_nemotron(nem_prompt)
+    
+    if "unavailable" in reasoning.lower():
+        print(f"⚠️ {reasoning}\n")
+    else:
+        # Show truncated output
+        preview_len = 800
+        if len(reasoning) > preview_len:
+            print(reasoning[:preview_len] + "\n...[truncated]\n")
+        else:
+            print(reasoning + "\n")
+
+    # Step 2: Gemini numeric forecast
+    print("Step 2: Gemini Numeric Forecast")
+    print("-" * 60)
+    numeric_prompt = make_prompt_gemini(df)
+    
+    try:
+        output_text = call_gemini(numeric_prompt)
+        forecast = parse_forecast(output_text)
+        if not forecast:
+            print("⚠️ Could not parse Gemini output, using fallback")
+            forecast = simple_local_forecast(df)
+    except Exception as e:
+        print(f"❌ Gemini failed: {e}")
+        print("Using local fallback forecast")
+        forecast = simple_local_forecast(df)
+
+    # Display results
+    print("\n" + "="*60)
+    print("FORECAST RESULTS")
+    print("="*60)
+    for k, v in forecast.items():
+        print(f"  {k}: {v:.2f}")
+    print("="*60 + "\n")
+
+    plot_forecast(df, forecast)
+
+if __name__ == "__main__":
+    main()
+
