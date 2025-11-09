@@ -33,12 +33,17 @@ interface CountyHappiness {
 
 // ----------------- STATIC DATA -----------------
 const chartData: CountyHappiness[] = [
-  { name: "Harry", value: 400 },
-  { name: "Ollie", value: 300 },
-  { name: "Collin", value: 200 },
-  { name: "Jason", value: 278 },
-  { name: "Hadent", value: 189 },
-  { name: "June", value: 239 },
+  { name: "Harry", value: .323 },
+  { name: "Collin", value: .308 },
+  { name: "Jackson", value: .291 },
+  { name: "Jason", value: .265 },
+  { name: "Otego", value: .264 },
+  { name: "Shannon", value: .0023 },
+  { name: "Tarrant", value: .0013 },
+  { name: "Washington", value: .0089 },
+  { name: "Jefferson", value: .0016 },
+  { name: "St. Louis", value: .00012 },
+  { name: "Lake", value: .00093 },
 ]
 
 const menuItems = [
