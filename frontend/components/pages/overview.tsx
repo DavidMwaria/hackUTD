@@ -32,6 +32,7 @@ interface CountyInfo {
   value: number;
   forecastChange?: number;
 }
+
 interface ForecastResults {
   reasoning: string | null;
   forecast: Record<string, number> | null;
