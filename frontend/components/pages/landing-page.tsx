@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { ArrowRight, Sparkles, Code2, Zap } from "lucide-react"
+import { ArrowRight, Sparkles, Code2, Zap, Calculator } from "lucide-react"
 import { Variants } from "framer-motion";
 
 
@@ -35,14 +35,14 @@ export function LandingPage() {
       description: "Next.js, TypeScript, Tailwind CSS, and shadcn/ui",
     },
     {
-      icon: Zap,
-      title: "Production Ready",
+      icon: Sparkles,
+      title: "AI Implemented",
       description: "Optimized performance and best practices built-in",
     },
     {
-      icon: Sparkles,
-      title: "Beautiful Animations",
-      description: "Smooth transitions with Framer Motion",
+      icon: Calculator,
+      title: "Calculated Insights",
+      description: "Charting and data visualization for clear understanding",
     },
   ]
 
